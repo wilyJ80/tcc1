@@ -1,0 +1,128 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,brazil]{babel}
+\usepackage{geometry}
+\geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Define resumo environment for Portuguese abstract
+\newenvironment{resumo}{%
+  \otherlanguage{brazil}%
+  \renewcommand{\abstractname}{Resumo}%
+  \begin{abstract}%
+}{%
+  \end{abstract}%
+}
+
+\title{\textbf{Template Provisório para TCC 1}}
+\author{Seu Nome Aqui \\ Orientador: Nome do Orientador}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{otherlanguage}{english}
+\begin{abstract}
+This document serves as a provisional template for TCC 1 (Trabalho de Conclusão de Curso 1). It includes structural elements such as title, abstract, sections, subsections, nested lists, tables, image insertion with strict positioning, and BibTeX references support.
+\end{abstract}
+\end{otherlanguage}
+
+\begin{resumo}
+Este documento serve como um template provisório para o TCC 1 (Trabalho de Conclusão de Curso 1). Ele inclui elementos estruturais fundamentais, tais como título, resumo, seções, subseções, listas aninhadas, tabelas, inserção de imagens com posicionamento fixo e suporte a referências bibliográficas via BibTeX.
+\end{resumo}
+
+\section{Introdução}
+O desenvolvimento de um Trabalho de Conclusão de Curso exige organização e uma estrutura textual padronizada. Esta seção apresenta o contexto e os objetivos gerais deste template provisório \cite{sommerville2019engenharia}.
+
+\subsection{Motivação}
+Muitos estudantes enfrentam dificuldades na formatação inicial em LaTeX. O objetivo deste modelo é fornecer uma base pronta e limpa para iniciar a escrita imediatamente.
+
+\subsection{Estrutura do Documento}
+O restante deste documento está organizado da seguinte forma:
+\begin{itemize}
+    \item A Seção 2 apresenta a fundamentação teórica e exemplos de inserção de imagens e fórmulas matemáticas.
+    \item A Seção 3 discute a metodologia adotada e apresenta exemplos de tabelas e listas aninhadas.
+    \item A Seção 4 conclui o trabalho e aponta direções futuras.
+\end{itemize}
+
+\section{Fundamentação Teórica}
+A fundamentação teórica baseia-se em conceitos consolidados na literatura de engenharia de software e desenvolvimento de sistemas \cite{fowler2018refactoring}.
+
+\subsection{Conceitos Fundamentais}
+Podemos expressar relações matemáticas ou métricas de qualidade de software de forma formal:
+\begin{equation}
+    M = \frac{C_{\text{modificado}}}{C_{\text{total}}} \times 100
+\end{equation}
+
+Abaixo, incluímos uma imagem gerada automaticamente para ilustrar o fluxo conceitual. Graças ao uso do pacote \texttt{float} com o modificador \texttt{[H]}, a imagem permanece exatamente onde foi declarada no código-fonte, evitando deslocamentos indesejados.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figura_exemplo.png}
+    \caption{Exemplo de imagem gerada por ferramenta externa e inserida no texto.}
+    \label{fig:exemplo}
+\end{figure}
+
+\subsection{Padrões e Especificações}
+Normas abertas são essenciais para garantir interoperabilidade na web moderna \cite{w3c2023html}.
+
+\section{Metodologia e Análise}
+A metodologia engloba as etapas de planejamento, execução e validação.
+
+\subsection{Etapas do Processo}
+Abaixo detalhamos as atividades planejadas em listas aninhadas:
+\begin{enumerate}
+    \item Fase de Planejamento:
+          \begin{itemize}
+              \item Levantamento bibliográfico inicial.
+              \item Definição do escopo e limitações.
+          \end{itemize}
+    \item Fase de Execução:
+          \begin{itemize}
+              \item Desenvolvimento do protótipo ou estudo empírico.
+              \item Coleta de dados e métricas.
+          \end{itemize}
+    \item Fase de Validação:
+          \begin{itemize}
+              \item Análise comparativa dos resultados.
+              \item Escrita do relatório final.
+          \end{itemize}
+\end{enumerate}
+
+\subsection{Comparativo de Ferramentas}
+A Tabela \ref{tab:comparativo} resume as principais características das ferramentas utilizadas no projeto.
+
+\begin{table}[H]
+    \centering
+    \caption{Comparativo de ferramentas e tecnologias.}
+    \label{tab:comparativo}
+    \begin{tabular}{lllc}
+        \toprule
+        \textbf{Ferramenta} & \textbf{Categoria} & \textbf{Finalidade Principal} & \textbf{Suporte} \\
+        \midrule
+        LaTeX / Tectonic & Editoração & Produção de documentos acadêmicos & Alto \\
+        ImageMagick & Gráficos & Geração e manipulação de imagens & Alto \\
+        Git & Controle de Versão & Rastreamento de alterações & Alto \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Conclusão e Trabalhos Futuros}
+Este template provisório fornece a estrutura necessária para iniciar a redação do TCC 1 sem preocupações excessivas com ajustes manuais de posicionamento de figuras e configuração de bibliografia. Como trabalhos futuros, sugere-se a expansão das seções teóricas e a adição de apêndices com dados brutos.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
