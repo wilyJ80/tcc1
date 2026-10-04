@@ -25,3 +25,5 @@ na revisao inicial pelo Springer, nao encontrei quase nenhum artigo falando sobr
 impressao inicial, pos triagem por titulo e abstract: nao gostei muito dos meus resultados. nao tive muita informacao sobre transferencia entre modelo multilingue e nativo.
 
 ## Filtragem por titulo e abstract: metodologia criterios
+
+- deve estar a fim de ficar no final com no maximo 30 artigos.
