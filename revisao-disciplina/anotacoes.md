@@ -24,6 +24,8 @@ na revisao inicial pelo Springer, nao encontrei quase nenhum artigo falando sobr
 
 impressao inicial, pos triagem por titulo e abstract: nao gostei muito dos meus resultados. nao tive muita informacao sobre transferencia entre modelo multilingue e nativo.
 
+pesquisar no google scholar depois essa string exatamente: `modernbert in qa question answering in long context and multilingual language transfer`
+
 ## Filtragem por titulo e abstract: metodologia criterios
 
 - deve estar a fim de ficar no final com no maximo 30 artigos.
