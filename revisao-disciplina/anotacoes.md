@@ -48,8 +48,8 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 
 - CE1: desvio de dominio
 
-- CE1: focado em LLMs, CNNs e IAs não diretamente relacionadas
+- CE2: focado em LLMs, CNNs e IAs não diretamente relacionadas
 
-- CE2: nao trata de treinamento ou fine tuning de modelos
+- CE3: nao trata de treinamento ou fine tuning de modelos
 
-- CE3: sem avaliação quantitativa
+- CE4: sem avaliação quantitativa
