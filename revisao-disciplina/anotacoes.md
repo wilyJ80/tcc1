@@ -31,3 +31,25 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - deve estar a fim de ficar no final com no maximo 30 artigos.
 
 - nao era pra registrar criterios na triagem inicial, so no texto completo
+
+- artigos de 6 meses
+
+## Filtragem por titulo completo
+
+- CI1: focado em NLP
+
+- CI2: trata de transferência de idiomas
+
+- CI3: trata de encoder BERT/Transformer
+
+- CI4: trata de longo contexto
+
+- CI5: trata de QA
+
+- CE1: desvio de dominio
+
+- CE1: focado em LLMs, CNNs e IAs não diretamente relacionadas
+
+- CE2: nao trata de treinamento ou fine tuning de modelos
+
+- CE3: sem avaliação quantitativa
