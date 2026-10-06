@@ -27,3 +27,5 @@ impressao inicial, pos triagem por titulo e abstract: nao gostei muito dos meus 
 ## Filtragem por titulo e abstract: metodologia criterios
 
 - deve estar a fim de ficar no final com no maximo 30 artigos.
+
+- nao era pra registrar criterios na triagem inicial, so no texto completo
