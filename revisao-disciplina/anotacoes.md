@@ -32,7 +32,7 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 
 - nao era pra registrar criterios na triagem inicial, so no texto completo
 
-- artigos de 6 meses
+- artigos de 6 meses, 98 retornados, 25 passados para leitura completa
 
 ## Filtragem por titulo completo
 
@@ -53,3 +53,19 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - CE3: nao trata de treinamento ou fine tuning de modelos
 
 - CE4: sem avaliação quantitativa
+
+## Anotacoes
+
+- preciso trazer na pesquisa background sobre o dataset squad em si.
+
+- preciso ver a forma como datasets squad em portugues foram construidos hoje, e identificar erros nos spans
+
+- pesquisa ainda nao esta bem delimitada no QA extrativo, parece muito geral ainda
+
+- preciso saber estudos hoje sobre transferencia de modelos multilingues na LINGUA PORTUGUESA
+
+- tcc: importante destacar que string de busca nao ficou muito legal
+
+- BLEU, ROUGE, e diferenca com relacao a EM e token level F1?
+
+- usar tutoriais hugging face para aprender para meu tcc
