@@ -69,3 +69,7 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - BLEU, ROUGE, e diferenca com relacao a EM e token level F1?
 
 - usar tutoriais hugging face para aprender para meu tcc
+
+- discussao sobre low resource e high resource language pode ser frutifera para embasar meu trabalho
+
+- assim como o background sobre Transformers, BERT, variantes de BERT gerais, e variantes de BERT para propositos especificos
