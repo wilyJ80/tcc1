@@ -70,6 +70,6 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 
 - usar tutoriais hugging face para aprender para meu tcc
 
-- discussao sobre low resource e high resource language pode ser frutifera para embasar meu trabalho
+- discussao sobre low resource e high resource language pode ser frutifera para embasar meu trabalho: ler https://arxiv.org/html/2603.21418v1
 
 - assim como o background sobre Transformers, BERT, variantes de BERT gerais, e variantes de BERT para propositos especificos
