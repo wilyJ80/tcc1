@@ -73,3 +73,5 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - discussao sobre low resource e high resource language pode ser frutifera para embasar meu trabalho: ler https://arxiv.org/html/2603.21418v1
 
 - assim como o background sobre Transformers, BERT, variantes de BERT gerais, e variantes de BERT para propositos especificos
+
+- como fiz a leitura por texto completo: com o artigo devidamente baixado, eu peguei o arquivo e fui grifando. depois categorizei de acordo com os criterios na planilha. li os grifos e escrevi o resumo, depois guardei o arquivo grifado para posterior referencia quando eu estiver escrevendo.
