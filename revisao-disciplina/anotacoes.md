@@ -77,3 +77,5 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - como fiz a leitura por texto completo: com o artigo devidamente baixado, eu peguei o arquivo e fui grifando. depois categorizei de acordo com os criterios na planilha. li os grifos e escrevi o resumo, depois guardei o arquivo grifado para posterior referencia quando eu estiver escrevendo.
 
 - PRECISO pegar um tutorial de treinamento e entender a fundo, fundamentalmente, como isso funciona, pra poder ter material solido para o anteprojeto.
+
+- talvez seja interessante trazer um pouco a diferenca de NER de QA Extrativo
