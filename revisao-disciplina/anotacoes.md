@@ -79,3 +79,5 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - PRECISO pegar um tutorial de treinamento e entender a fundo, fundamentalmente, como isso funciona, pra poder ter material solido para o anteprojeto.
 
 - talvez seja interessante trazer um pouco a diferenca de NER de QA Extrativo
+
+- O artigo sobre aplicacoes de QA Extrativo (o de desastres) mostra a importancia de eu trazer exemplos de QA Extrativo relevantes pra nao so ficar na teoria.
