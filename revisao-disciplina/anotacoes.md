@@ -81,3 +81,45 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 - talvez seja interessante trazer um pouco a diferenca de NER de QA Extrativo
 
 - O artigo sobre aplicacoes de QA Extrativo (o de desastres) mostra a importancia de eu trazer exemplos de QA Extrativo relevantes pra nao so ficar na teoria.
+
+============ DEU MERDA ============
+
+Revisao dos artigos por texto completo do Springer Link provou que os artigos não conseguiram responder as questões de pesquisa. Os artigos não foram descartados por trazer alguma fundamentação ao tema, mesmo sem necessariamente trazer as informações desejadas necessárias. As perguntas de pesquisas foram reformuladas:
+
+- Antes:
+
+RQ1. Qual é a influência do tamanho da janela de contexto no desempenho de modelos baseados em BERT para Question Answering extrativo?
+
+RQ2. Como o alinhamento entre a língua do pré-treinamento, do fine-tuning e da avaliação influencia o desempenho de modelos baseados em BERT em Question Answering extrativo?
+
+RQ3. Quais condições estão associadas a ganhos de desempenho no Question Answering extrativo de longo contexto quando o modelo é especializado na língua da tarefa?
+
+RQ4. Como a literatura caracteriza o desempenho de modelos encoder-only monolíngues e multilíngues em tarefas de Question Answering extrativo em português?
+
+- Depois:
+
+RQ3: Quais estratégias de adaptação linguística e de processamento de contexto são utilizadas em modelos encoder-only para QA extrativo, e quais limitações são relatadas?
+
+RQ4: Quais modelos encoder-only, conjuntos de dados e protocolos de avaliação são utilizados em QA extrativo para português, e quais lacunas permanecem na comparação entre modelos monolíngues e multilíngues?
+
+Logo, foi selecionada uma nova estratégia de busca.
+
+A string de busca, antes geral:
+
+```
+("BERT" OR "encoder-only transformer")
+AND
+("extractive question answering" OR "question answering" OR "machine reading comprehension")
+AND
+("long context" OR "long-context" OR "long document" OR "context window" OR "sequence length")
+AND
+(Portuguese OR multilingual OR monolingual OR "language-specific")
+```
+
+Foi entao adaptada para cada pergunta de pesquisa:
+
+"BERT" AND "multilingual" AND "transfer" (arxiv) -> transferencia de linguagem
+
+======== FIM DO DEU MERDA =========
+
+ler: https://arxiv.org/abs/1706.03762 (attention is all you need)
