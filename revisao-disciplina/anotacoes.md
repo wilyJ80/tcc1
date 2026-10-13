@@ -32,7 +32,7 @@ pesquisar no google scholar depois essa string exatamente: `modernbert in qa que
 
 - nao era pra registrar criterios na triagem inicial, so no texto completo
 
-- artigos de 6 meses, 98 retornados, 25 passados para leitura completa
+- artigos de 6 meses, 98 retornados, 25 passados para leitura completa, escolhidos a definir
 
 ## Filtragem por titulo completo
 
@@ -120,6 +120,22 @@ Foi entao adaptada para cada pergunta de pesquisa:
 
 "BERT" AND "multilingual" AND "transfer" (arxiv) -> transferencia de linguagem
 
+"BERT" question answering "multilingual" "context size" cross-lingual transfer site:aclanthology.org -> google scholar acl anthology
+
 ======== FIM DO DEU MERDA =========
 
 ler: https://arxiv.org/abs/1706.03762 (attention is all you need)
+
+==========
+
+nova tentativa: google scholar acl anthology, nao segui a estrategia de fazer a busca por pergunta de pesquisa, tentei a string geralzona
+
+total 46 resultados
+
+1 duplicado (NorBERTo)
+
+1 conferencia
+
+4 escolhidos para analise texto completo
+
+existe uma diferenca grande entre pre treinamento e fine tuning
