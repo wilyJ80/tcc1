@@ -138,4 +138,4 @@ total 46 resultados
 
 4 escolhidos para analise texto completo
 
-existe uma diferenca grande entre pre treinamento e fine tuning
+existe uma diferenca grande entre pre treinamento e fine tuning: importante desambiguar!
