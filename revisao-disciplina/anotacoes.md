@@ -129,6 +129,7 @@ ler: https://arxiv.org/abs/1706.03762 (attention is all you need)
 ==========
 
 nova tentativa: google scholar acl anthology, nao segui a estrategia de fazer a busca por pergunta de pesquisa, tentei a string geralzona
+`"BERT" question answering "multilingual" "context size" cross-lingual transfer site:aclanthology.org` -> google scholar acl anthology
 
 total 46 resultados
 
@@ -139,3 +140,8 @@ total 46 resultados
 4 escolhidos para analise texto completo
 
 existe uma diferenca grande entre pre treinamento e fine tuning: importante desambiguar!
+
+2 escolhidos no final
+
+foi percebido que as strings de busca nao estavam priorizando fine-tuning e sim pre-treinamento.
+preciso focar em fine-tuning
