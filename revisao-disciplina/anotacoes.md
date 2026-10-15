@@ -161,3 +161,25 @@ foi encontrada uma boa string de busca para o Springer Link:
 rendendo bons artigos, inclusive sobre lingua portuguesa. no entanto, ModernBERT + Longo Contexto + QA Extrativo + Transferência Multilíngue + Português é um escopo muito largo, o que explica a dificuldade de realizar as buscas.
 
 preciso mudar de alguma forma minha pergunta de pesquisa e objetivos sem comprometer o que ja tenho
+
+OBJETIVO
+
+Identificar e analisar estudos que investigam o uso de modelos BERT e variantes baseadas em arquiteturas encoder-only para Question Answering extrativo, no idioma do pré-treinamento e no alinhamento linguístico entre pré-treinamento, fine-tuning e avaliação, de modo a fundamentar a comparação experimental entre modelos ModernBERT multilíngues e especializados em português.
+
+PICOC
+
+P) Modelos baseados em BERT/Transformers encoder-only aplicados a Question Answering extrativo
+
+I) Modelos pré-treinados em língua específica, com fine-tuning e avaliação alinhados ao idioma
+
+C) Modelos multilíngues, ou modelos cujo pré-treinamento não é especializado na língua da tarefa
+
+O) Desempenho em QA extrativo, especialmente métricas relacionadas ao desempenho
+
+C) Question Answering extrativo, com ênfase em idiomas diferentes, particularmente português
+
+QUESTOES DE PESQUISA
+
+Q1. Como o alinhamento entre a língua do pré-treinamento e do fine-tuning influencia o desempenho de modelos baseados em BERT em Question Answering extrativo?
+
+Q2. Como a literatura caracteriza o desempenho de modelos encoder-only monolíngues e multilíngues em tarefas de Question Answering extrativo em português?
