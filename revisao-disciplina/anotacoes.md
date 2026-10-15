@@ -145,3 +145,19 @@ existe uma diferenca grande entre pre treinamento e fine tuning: importante desa
 
 foi percebido que as strings de busca nao estavam priorizando fine-tuning e sim pre-treinamento.
 preciso focar em fine-tuning
+
+===============
+
+nova tentativa: arxiv com foco em fine-tuning e transferencia multilingual
+
+`"transfer" AND "BERT" AND "fine-tuning"`
+
+mas nao trouxe bons artigos, pela leitura rapida de titulo e resumo. nao usei.
+
+foi encontrada uma boa string de busca para o Springer Link:
+
+`"cross-lingual transfer" AND "BERT" AND "fine-tuning" AND NOT "LLM"`
+
+rendendo bons artigos, inclusive sobre lingua portuguesa. no entanto, ModernBERT + Longo Contexto + QA Extrativo + Transferência Multilíngue + Português é um escopo muito largo, o que explica a dificuldade de realizar as buscas.
+
+preciso mudar de alguma forma minha pergunta de pesquisa e objetivos sem comprometer o que ja tenho
