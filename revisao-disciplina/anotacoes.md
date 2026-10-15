@@ -158,6 +158,8 @@ foi encontrada uma boa string de busca para o Springer Link:
 
 `"cross-lingual transfer" AND "BERT" AND "fine-tuning" AND NOT "LLM"`
 
+-> 250 artigos, 5 duplicados, 5 passaram para leitura completa
+
 rendendo bons artigos, inclusive sobre lingua portuguesa. no entanto, ModernBERT + Longo Contexto + QA Extrativo + Transferência Multilíngue + Português é um escopo muito largo, o que explica a dificuldade de realizar as buscas.
 
 preciso mudar de alguma forma minha pergunta de pesquisa e objetivos sem comprometer o que ja tenho
@@ -183,3 +185,7 @@ QUESTOES DE PESQUISA
 Q1. Como o alinhamento entre a língua do pré-treinamento e do fine-tuning influencia o desempenho de modelos baseados em BERT em Question Answering extrativo?
 
 Q2. Como a literatura caracteriza o desempenho de modelos encoder-only monolíngues e multilíngues em tarefas de Question Answering extrativo em português?
+
+metodologia na segunda pesquisa no Springer Link: checar duplicado, analisar titulo e abstract, e adicionar se passar
+
+https://arxiv.org/pdf/2309.15779 -> ler
