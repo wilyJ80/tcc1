@@ -193,3 +193,5 @@ https://arxiv.org/pdf/2309.15779 -> ler
 **preciso** trazer um historico de variantes de BERT ate chegar no ModernBERT no meu trabalho final
 
 https://aclanthology.org/2025.acl-long.127.pdf -> traz simplesmente embasamento absurdo sobre a superioridade do ModernBERT, mas so em ingles
+
+somente nessa terceira busca estou me familiarizando com as terminologias corretamente.
