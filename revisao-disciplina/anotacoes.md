@@ -189,3 +189,7 @@ Q2. Como a literatura caracteriza o desempenho de modelos encoder-only monolíng
 metodologia na segunda pesquisa no Springer Link: checar duplicado, analisar titulo e abstract, e adicionar se passar
 
 https://arxiv.org/pdf/2309.15779 -> ler
+
+**preciso** trazer um historico de variantes de BERT ate chegar no ModernBERT no meu trabalho final
+
+https://aclanthology.org/2025.acl-long.127.pdf -> traz simplesmente embasamento absurdo sobre a superioridade do ModernBERT, mas so em ingles
