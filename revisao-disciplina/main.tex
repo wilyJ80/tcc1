@@ -155,56 +155,89 @@ Suas conclusões.
 \bibliographystyle{plain}
 \bibliography{references}
 
-
 \clearpage
 \begin{landscape}
-\section{Planilha-resumo dos Resultados}
-\centering
-\captionof{table}{Planilha-resumo dos trabalhos selecionados}
-\label{tab:comparativo}
-    \scriptsize
 
-    \begin{tabularx}{\linewidth}{
-        >{\raggedright\arraybackslash}X
-        *{9}{c}
-        >{\raggedright\arraybackslash}X
-    }
-        \toprule
-        Trabalho & I1 & I2 & I3 & I4 & I5 & E1 & E2 & E3 & E4 & Observações \\
-        \midrule
-        Ambala et al. (2026) &
+\section{Planilha-resumo dos Resultados}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+
+\begin{xltabular}{\linewidth}{
+    >{\raggedright\arraybackslash}X
+    *{9}{c}
+    >{\raggedright\arraybackslash}X
+}
+    \caption{Planilha-resumo dos trabalhos selecionados}
+    \label{tab:comparativo1} \\
+
+    \toprule
+    Trabalho & I1 & I2 & I3 & I4 & I5 &
+    E1 & E2 & E3 & E4 & Observações \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{11}{c}{
+        \tablename~\thetable\ -- continuação
+    } \\
+
+    \toprule
+    Trabalho & I1 & I2 & I3 & I4 & I5 &
+    E1 & E2 & E3 & E4 & Observações \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{11}{r}{Continua na próxima página} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    % Cole aqui todas as linhas dos seus trabalhos,
+    % começando pela primeira linha de dados.
+    % Mantenha os \midrule entre os trabalhos, se desejar.
+
+        Ambala, S., Selvi, M., Kiruba, S. et al. NTAM: Neural Transfer Alignment for Cross-Lingual Question Answering in Low-Resource Indian Languages. SN COMPUT. SCI. 7, 526 (2026). https://doi.org/10.1007/s42979-026-05111-4 &
         X & X & X & & X & & & & &
         Discute a importância de \textit{datasets} nativos em vez de traduções automáticas; aponta que a menor representação de certos idiomas no treinamento pode afetar a qualidade da inferência; considera o alinhamento uma precondição para a transferência bem-sucedida. 
         \\
         \midrule
-        Alves Oliveira et al. (2026) &
+        Oliveira, Rennê \& Erven, Gustavo \& Garcia, Luís. (2026). BERTomelo: Your Portuguese Encoder Best Friend. 10.48550/arXiv.2606.28999. &
         X & X & X & X & & & & & & 
         Apresenta a "maldição da multilingualidade", afirmando a superioridade de modelos monolíngues para tarefas em idoma nativo em comparação com multilíngues, com exemplos, e contextualiza na língua portuguesa. Com modelo baseado em \textit{ModernBERT} com 1024 \textit{tokens}, o BERTomelo, apresenta que longo contexto é um objeto de estudo a ser pesquisado em trabalhos futuros.
         \\
         \midrule
-        Savant et al. (2026) &
+        Savant, S., Deshpande, U.U. \& D’Silva, J. Systematic review and comparative synthesis of cross lingual question answering systems for low resource Indic languages. Discov Artif Intell 6, 1065 (2026). https://doi.org/10.1007/s44163-026-01750-x &
         X & X & & & X & & & & & 
         QA Extrativo é um tipo especial de QA dentre muitos, no qual o BERT se destaca, e o mais sensível a problemas de tradução. Métricas principais: EM e \textit{token-level} F1. Idiomas menos representados no treinamento de modelos multilíngues são prejudicados. SQuAD é um excelente dataset que acelera o desenvolvimento em contraste com \textit{datasets} nativos bem menores, mas tradução automática pode comprometê-lo. O principal problema é o alinhamento de \textit{spans}.
         \\
         \midrule
-        Sharma et al. (2026) &
+        Sharma, V.K., Sethi, K.H., Saran, S. et al. Automated Natural Disaster Monitoring from Online News \& Social Media Posts Using Sentiment Analysis \& GIS. Earth Syst Environ 10, 13301–13339 (2026). https://doi.org/10.1007/s41748-026-01305-1 &
         X & & X & & X & & & & & 
         Mostra o QA Extrativo em uma aplicação específica: inferir locais de desastres naturais. Apresenta modelo de classificação desempenhando QA bem sem precisar de \textit{fine-tuning} naquele contexto específico. \\
         \midrule
-        Enzo S. N. Silva et al. (2026) &
+        Enzo S. N. Silva, Pablo B. Costa, Raphael C. Vlasman, Rosimeire P. Costa, Henrique L. P. Silva, Lucas F. A. O. Pellicer, Guilherme Rinaldo, Renato A. Almeida, Darian S. R. Rabbani, Cinthya O. Oestreich, and Vinicius F. Caridá. 2026. NorBERTo: A ModernBERT Model Trained for Portuguese with 331 Billion Tokens Corpus. In Proceedings of the 17th International Conference on Computational Processing of Portuguese (PROPOR 2026) - Vol. 1, pages 183–193, Salvador, Brazil. Association for Computational Linguistics. &
         X & & X & X & & & & & &
         Em comparação com LLMs, modelos BERT têm vantagens de custo, latência e não estarem expostos a alucinações, sendo tão bons ou até melhores para muitas tarefas. Sugere que modelos nativos, como BERTimbau em português, superaram multilíngues em diversas tarefas. Apresenta um modelo baseado em ModernBERT, o NorBERTo, que performa bem, mesmo não sendo pré-treinado em tanto conteúdo quando o ModernBERT original. \\
         \midrule
-        Ramy Eskander et al. (2026) &
+        Ramy Eskander, Shubhanshu Mishra, Sneha Mehta, Sofia Samaniego, and Aria Haghighi. 2022. Towards Improved Distantly Supervised Multilingual Named-Entity Recognition for Tweets. In Proceedings of the 2nd Workshop on Multi-lingual Representation Learning (MRL), pages 115–124, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics. &
         X & X & X & & & & & & &
         Mostra de forma detalhada um benchmark de \textit{fine-tuning} de modelos de classificação para NER \textit{(Named Entity Recognition).} Compara modelos nativos, multilíngues em famílias de idiomas, e multilíngues em idiomas de origens diversas, uma categoria se sobressaindo à outra, respectivamente. \\
         \midrule
-        Villegas-Ch et al. (2026) &
+        Villegas-Ch, W., Gutierrez, R., Mera-Navarrete, A. et al. Multilingual Evaluation of Semantic Robustness and Cultural Adaptability in Transformer Models for Emotion Recognition. Cogn Comput 18, 73 (2026). https://doi.org/10.1007/s12559-026-10621-7 &
         X & X & X & & & & & & &
         Desambigua termos: idioma \textit{low-resource} e \textit{less-represented.} Traz limitações a respeito de modelos multilígues terem limitações, notadamente no que diz respeito ao desempenho em linguagem informal ou regional, o que \textit{benchmarks} comuns não mostram, notadamente no idioma português. \\
         \midrule
-        \bottomrule
-\end{tabularx}
+        ., C., Kyaw, K.T., Jain, R. et al. A systematic evaluation of transformer-based architectures for fake news detection in the low-resource Burmese language. Sci Rep 16, 25667 (2026). https://doi.org/10.1038/s41598-026-56647-7 &
+        X & X & X & & & & & & &
+        Reconhece que modelos multilíngues são capazes de capturar relações linguísticas entre os idiomas. O esetudo compara modelo nativo, multilíngue, e uma arquitetura distinta. Conclui que pré-treinamento em idioma nativo é crucial para bons resultados. \\
+        \midrule
+\end{xltabular}
+\endgroup
+
 \end{landscape}
 \clearpage
 
