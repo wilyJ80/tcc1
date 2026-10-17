@@ -1,7 +1,7 @@
 set terminal pngcairo enhanced size 1400,900 font "Arial,12"
 set output "prisma_por_base.png"
 
-set title "Fluxograma PRISMA — seleção por busca"
+set title "Gráfico - Seleção por base"
 set ylabel "Quantidade de artigos"
 set yrange [0:270]
 set ytics 25

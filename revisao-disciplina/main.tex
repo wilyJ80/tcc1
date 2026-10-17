@@ -7,7 +7,12 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
+\usepackage{xltabular}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{caption}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
@@ -25,7 +30,7 @@
   \end{abstract}%
 }
 
-\title{\textbf{Revisão Sistemática sobre Capacidade de Transferência Entre Idiomas em Inferência de Modelos de Linguagem BERT}}
+\title{\textbf{Revisão Sistemática sobre Capacidade de Transferência Entre Idiomas em Inferência de Modelos de Linguagem BERT voltada para QA Extrativo de Longo Contexto}}
 \author{
     Victor Hugo Santos Bitencourt \\
     Departamento de Ciências Exatas e da Terra, Campus I \\
@@ -113,19 +118,21 @@ cross-lingual transfer site:aclanthology.org
 Escreva
 
 \subsection{Condução}
-Escreva
+A condução desta revisão sistemática dá-se a partir da coleta de artigos da base correspondente, realizada a partir de uma \textit{string} de busca formulada a partir das questões de pesquisa e o PICOC. Os artigos duplicados são removidos, e a triagem inicial é realizada, que consiste numa leitura de título e resumo, aplicando os critérios de inclusão e exclusão.
+
+O segundo passo se dá a partir da leitura completa dos artigos retornados, também seguindo os critérios de inclusão e exclusão e registrando-os. No mesmo momento é feito o registro da nota dada ao artigo com base nos critérios de inclusão (ponto positivo) e exclusão (ponto negativo), assim como a anotação de informações que dialogam com tanto com os critérios quanto com as perguntas de pesquisa. Foi definido que, ao final de toda a revisão, seriam considerados aceitos os artigos com nota maior que zero.
+
+Por fim, para a base na qual foi feita a busca, foi feita uma avaliação rápida se o conteúdo apreendido traz progresso evidente na resposta das perguntas de pesquisa. Se não, o processo é repetido reformulando as perguntas de pesquisa e PICOC a fim de construir uma nova \textit{string} de busca, potencialmente em outra base, seguida da pesquisa. Foi dessa forma que esse trabalho se valeu de mais de um método de busca e repositório de artigos, adotando uma postura investigativa e crítica sobre o tema em questão, e sobretudo a metodologia adotada para buscar o conhecimento.
 
 \section{Resultados das Triagens}
 Foram removidos 5 artigos duplicados. As 3 buscas, correspondentes a 2 bases, retornaram no total 394 resultados de pesquisa (soma de 389 artigos encontrados no total e 5 resultados duplicados). Após triagem por título e resumo, sobraram 39 artigos. Após leitura por texto completo, restaram 16 artigos, que logo em seguida tiveram seus dados extraídos após a análise individual dos critérios de inclusão e exclusão. 
 
-Por base, a primeira busca no \textit{Springer Link} retornou 98 trabalhos, sendo 25 passados para leitura completa, e 10 aceitos. A segunda busca, no \textit{ACL Anthology} retornou 46 resultados, tendo 4 sido lidos inteiramente e 2 aceitos. A terceira busca, também no \textit{Springer Link}, trouxe 250 artigos, com 5 duplicados, 10 lidos na totalidade e 4 aceitos. Os resultados da triagem são mostrados a seguir.
-
-O fluxograma da busca consolidada entre as bases é exibido a seguir.
+Por base, a primeira busca no \textit{Springer Link} retornou 98 trabalhos, sendo 25 passados para leitura completa, e 10 aceitos. A segunda busca, no \textit{ACL Anthology} retornou 46 resultados, tendo 4 sido lidos inteiramente e 2 aceitos. A terceira busca, também no \textit{Springer Link}, trouxe 250 artigos, com 5 duplicados, 10 lidos na totalidade e 4 aceitos. Os resultados da triagem são mostrados a seguir, assim como o fluxograma da busca consolidada entre as bases.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{static/prisma_por_base.png}
-    \caption{Diagrama de Resultados por Base}
+    \caption{Gráfico de Resultados por Base}
     \label{fig:exemplo2}
 \end{figure}
 
@@ -137,6 +144,8 @@ O fluxograma da busca consolidada entre as bases é exibido a seguir.
     \label{fig:exemplo}
 \end{figure}
 
+Os artigos aceitos, suas respectivas identificações, critérios observados e anotações, podem ser vistos na tabela-resumo em anexo.
+
 \subsection{Análise Qualitativa dos Resultados}
 Escreva algo e cite \cite{w3c2023html}.
 
@@ -146,23 +155,57 @@ Suas conclusões.
 \bibliographystyle{plain}
 \bibliography{references}
 
+
 \clearpage
+\begin{landscape}
+\section{Planilha-resumo dos Resultados}
+\centering
+\captionof{table}{Planilha-resumo dos trabalhos selecionados}
+\label{tab:comparativo}
+    \scriptsize
 
-\section{Planilha-resumo de Resultados}
-
-\begin{table}[H]
-    \centering
-    \caption{Comparativo de ferramentas e tecnologias.}
-    \label{tab:comparativo}
-    \begin{tabular}{lllc}
+    \begin{tabularx}{\linewidth}{
+        >{\raggedright\arraybackslash}X
+        *{9}{c}
+        >{\raggedright\arraybackslash}X
+    }
         \toprule
-        \textbf{Ferramenta} & \textbf{Categoria} & \textbf{Finalidade Principal} & \textbf{Suporte} \\
+        Trabalho & I1 & I2 & I3 & I4 & I5 & E1 & E2 & E3 & E4 & Observações \\
         \midrule
-        LaTeX / Tectonic & Editoração & Produção de documentos acadêmicos & Alto \\
-        ImageMagick & Gráficos & Geração e manipulação de imagens & Alto \\
-        Git & Controle de Versão & Rastreamento de alterações & Alto \\
+        Ambala et al. (2026) &
+        X & X & X & & X & & & & &
+        Discute a importância de \textit{datasets} nativos em vez de traduções automáticas; aponta que a menor representação de certos idiomas no treinamento pode afetar a qualidade da inferência; considera o alinhamento uma precondição para a transferência bem-sucedida. 
+        \\
+        \midrule
+        Alves Oliveira et al. (2026) &
+        X & X & X & X & & & & & & 
+        Apresenta a "maldição da multilingualidade", afirmando a superioridade de modelos monolíngues para tarefas em idoma nativo em comparação com multilíngues, com exemplos, e contextualiza na língua portuguesa. Com modelo baseado em \textit{ModernBERT} com 1024 \textit{tokens}, o BERTomelo, apresenta que longo contexto é um objeto de estudo a ser pesquisado em trabalhos futuros.
+        \\
+        \midrule
+        Savant et al. (2026) &
+        X & X & & & X & & & & & 
+        QA Extrativo é um tipo especial de QA dentre muitos, no qual o BERT se destaca, e o mais sensível a problemas de tradução. Métricas principais: EM e \textit{token-level} F1. Idiomas menos representados no treinamento de modelos multilíngues são prejudicados. SQuAD é um excelente dataset que acelera o desenvolvimento em contraste com \textit{datasets} nativos bem menores, mas tradução automática pode comprometê-lo. O principal problema é o alinhamento de \textit{spans}.
+        \\
+        \midrule
+        Sharma et al. (2026) &
+        X & & X & & X & & & & & 
+        Mostra o QA Extrativo em uma aplicação específica: inferir locais de desastres naturais. Apresenta modelo de classificação desempenhando QA bem sem precisar de \textit{fine-tuning} naquele contexto específico. \\
+        \midrule
+        Enzo S. N. Silva et al. (2026) &
+        X & & X & X & & & & & &
+        Em comparação com LLMs, modelos BERT têm vantagens de custo, latência e não estarem expostos a alucinações, sendo tão bons ou até melhores para muitas tarefas. Sugere que modelos nativos, como BERTimbau em português, superaram multilíngues em diversas tarefas. Apresenta um modelo baseado em ModernBERT, o NorBERTo, que performa bem, mesmo não sendo pré-treinado em tanto conteúdo quando o ModernBERT original. \\
+        \midrule
+        Ramy Eskander et al. (2026) &
+        X & X & X & & & & & & &
+        Mostra de forma detalhada um benchmark de \textit{fine-tuning} de modelos de classificação para NER \textit{(Named Entity Recognition).} Compara modelos nativos, multilíngues em famílias de idiomas, e multilíngues em idiomas de origens diversas, uma categoria se sobressaindo à outra, respectivamente. \\
+        \midrule
+        Villegas-Ch et al. (2026) &
+        X & X & X & & & & & & &
+        Desambigua termos: idioma \textit{low-resource} e \textit{less-represented.} Traz limitações a respeito de modelos multilígues terem limitações, notadamente no que diz respeito ao desempenho em linguagem informal ou regional, o que \textit{benchmarks} comuns não mostram, notadamente no idioma português. \\
+        \midrule
         \bottomrule
-    \end{tabular}
-\end{table}
+\end{tabularx}
+\end{landscape}
+\clearpage
 
 \end{document}
