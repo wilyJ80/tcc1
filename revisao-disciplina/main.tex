@@ -61,6 +61,9 @@ No ecossistema X, sua solução se manifesta de tal forma e pode ser usada de ta
 \section{Relato da Revisão de Literatura}
 Escreva alguma coisa.
 
+\subsection{Questões de Pesquisa}
+Escreva algo
+
 \subsection{Definição do PICOC}
 Escreva alguma coisa.
 
@@ -75,14 +78,36 @@ Escreva alguma coisa.
 \subsection{Critérios de Inclusão e Exclusão}
 Escreva algo aqui
 
-\subsection{Questões de Pesquisa}
-Escreva algo
-
 \subsection{Bases de Dados}
-Escreva algo.
+As buscas foram feitas nos repositórios de artigos \textit{Springer Link} e \textit{ACL Anthology}. A primeira busca foi realizada no \textit{Springer Link}, base que se mostrou promissora em volume de conteúdo para os temas estudados, com recorte temporal de 6 meses. A busca no \textit{ACL Anthology} foi motivada pela busca de uma base mais alinhada com o campo de pesquisa em NLP, e os resultados foram acessados via \textit{Google Scholar}. A terceira busca foi feita no \textit{Springer Link}, sem recorte temporal, utilizando uma \textit{string} de busca mais bem delimitada ao que se deseja pesquisar nesta revisão.
 
 \subsection{Strings de Busca}
-Escreva
+\textit{String} de busca geral, utilizada no \textit{Springer Link,} com escopo geral:
+
+\begin{verbatim}
+("BERT" OR "encoder-only transformer")
+AND
+("extractive question answering" OR "question answering" OR 
+"machine reading comprehension")
+AND
+("long context" OR "long-context" OR "long document" OR "context window" 
+OR "sequence length")
+AND
+(Portuguese OR multilingual OR monolingual OR "language-specific")
+\end{verbatim}
+
+\textit{String} utilizada no \textit{Google Scholar} filtrando resultados do \textit{ACL Anthology:}
+
+\begin{verbatim}
+"BERT" question answering "multilingual" "context size" 
+cross-lingual transfer site:aclanthology.org
+\end{verbatim}
+
+\textit{String} utilizada por fim, no \textit{Springer Link:}
+
+\begin{verbatim}
+"cross-lingual transfer" AND "BERT" AND "fine-tuning" AND NOT "LLM"
+\end{verbatim}
 
 \subsection{Perguntas de Avaliação de Qualidade}
 Escreva
@@ -91,7 +116,7 @@ Escreva
 Escreva
 
 \section{Resultados das Triagens}
-Escreva algo.
+Foram removidos 5 artigos duplicados. As 3 buscas, correspondentes a 2 bases, retornaram no total 394 artigos. Após triagem por título e resumo, sobraram 39 artigos. Após leitura por texto completo, restaram 16 artigos.
 
 \begin{figure}[H]
     \centering

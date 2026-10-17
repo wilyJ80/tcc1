@@ -195,3 +195,22 @@ https://arxiv.org/pdf/2309.15779 -> ler
 https://aclanthology.org/2025.acl-long.127.pdf -> traz simplesmente embasamento absurdo sobre a superioridade do ModernBERT, mas so em ingles
 
 somente nessa terceira busca estou me familiarizando com as terminologias corretamente.
+
+ordem de escrita:
+resultados das triagens
+bases de dados
+strings de busca
+conducao
+definir criterio score para aceitacao dos artigos, e entao:
+planilha-resumo dos resultados
+analise qualitativa dos resultados
+conclusoes
+perguntas de avaliacao de qualidade
+criterios de inclusao e exclusao
+questoes de pesquisa
+definicao do picoc
+relato RSL
+conclusao
+introducao
+resumo
+abstract
