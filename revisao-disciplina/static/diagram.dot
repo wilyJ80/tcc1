@@ -1,0 +1,90 @@
+digraph PRISMA {
+    graph [
+        rankdir=TB,
+        splines=ortho,
+        nodesep=0.5,
+        ranksep=0.6,
+        bgcolor="white",
+        pad=0.2,
+        fontname="Arial",
+        label="Fluxograma: seleção consolidada entre bases",
+        labelloc=t,
+        fontsize=16
+    ];
+
+    node [
+        shape=box,
+        style="rounded",
+        fontname="Arial",
+        fontsize=11,
+        color="#333333",
+        margin="0.2,0.12",
+        width=4.5
+    ];
+
+    edge [
+        color="#333333",
+        penwidth=1.2,
+        arrowsize=0.8
+    ];
+
+    identificados [
+        label="Registros identificados nas bases de dados\n(n = 394)"
+    ];
+
+    duplicatas [
+        label="Duplicatas removidas\n(n = 5)",
+        width=2.8
+    ];
+
+    deduplicados [
+        label="Registros após remoção de duplicatas\n(n = 389)"
+    ];
+
+    triados [
+        label="Registros triados por título e resumo\n(n = 389)"
+    ];
+
+    excluidos_triagem [
+        label="Registros excluídos na triagem\n(n = 350)",
+        width=2.8
+    ];
+
+    texto_completo [
+        label="Artigos avaliados por texto completo\n(n = 39)"
+    ];
+
+    excluidos_texto [
+        label="Artigos excluídos após leitura completa\n(n = 23)",
+        width=3.0
+    ];
+
+    incluidos [
+        label="Estudos incluídos na revisão\n(n = 16)"
+    ];
+
+    identificados -> deduplicados;
+    deduplicados -> triados;
+    triados -> texto_completo;
+    texto_completo -> incluidos;
+
+    deduplicados -> duplicatas [
+        constraint=false
+    ];
+
+    triados -> excluidos_triagem [
+        constraint=false
+    ];
+
+    texto_completo -> excluidos_texto [
+        constraint=false
+    ];
+
+    { rank=same; deduplicados; duplicatas; }
+    { rank=same; triados; excluidos_triagem; }
+    { rank=same; texto_completo; excluidos_texto; }
+
+    deduplicados -> duplicatas [style=invis, weight=10];
+    triados -> excluidos_triagem [style=invis, weight=10];
+    texto_completo -> excluidos_texto [style=invis, weight=10];
+}
