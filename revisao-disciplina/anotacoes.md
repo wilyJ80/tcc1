@@ -208,7 +208,6 @@ definicao do picoc
 perguntas de avaliacao de qualidade
 questoes de pesquisa
 analise qualitativa dos resultados
-conclusoes
 conclusao
 introducao
 resumo

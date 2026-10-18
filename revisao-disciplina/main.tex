@@ -45,33 +45,21 @@
 \maketitle
 
 \begin{resumo}
-Este trabalho consiste em uma revisão sistemática a sobre tal coisa, buscando investigar tal coisa. A metodologia consistiu em fazer tais coisas. Os resultados consistem em tais coisas. Conclui-se que tal coisa.
+Este artigo apresenta uma Revisão Sistemática da Literatura (RSL) sobre a capacidade de transferência translíngue e o impacto de longos contextos em modelos baseados em arquiteturas \textit{encoder-only} (família BERT) aplicados a \textit{Question Answering} (QA) Extrativo. Utilizando o \textit{framework} PICOC, conduziu-se uma triagem em bases científicas que resultou na seleção de 16 artigos relevantes após um rigoroso processo de filtragem. Os resultados apontam que, embora modelos multilíngues realizem transferência translíngue em cenários de baixa representação, sofrem com a ``maldição da multilingualidade'', sendo superados por modelos monolíngues nativos em português. Ademais, constata-se que o processamento de longos contextos em QA extrativo ainda representa um desafio empírico e uma lacuna metodológica, especialmente frente às capacidades de expansão de janelas em arquiteturas recentes como o \textit{ModernBERT}.
 \end{resumo}
 
 \begin{otherlanguage}{english}
 \begin{abstract}
-Em inglês.
+This paper presents a Systematic Literature Review (SLR) on cross-lingual transfer capabilities and the impact of long contexts in encoder-only models (BERT family) applied to Extractive Question Answering (QA). Using the PICOC framework, a systematic search across scientific databases yielded 16 relevant articles following a rigorous screening process. The findings indicate that while multilingual models enable cross-lingual transfer in low-resource settings, they suffer from the ``curse of multilinguality'' and are consistently outperformed by native Portuguese monolingual models. Furthermore, processing long contexts in extractive QA remains an empirical challenge and a methodological gap, particularly regarding the window expansion capabilities of recent architectures such as ModernBERT.
 \end{abstract}
 \end{otherlanguage}
 
 \section{Introdução}
-No contexto do que, esse tema principal serve pra tal coisa. Qual sua importancia, relevancia, normas tecnicas? O que é esse tema principal, de acordo com tal norma tecnica? Cite alguma coisa pra nao ficar no ar. Traga o contexto do mundo, do Brasil, seja o que for.
+No âmbito da Inteligência Artificial, os Grandes Modelos de Linguagem (LLMs) dominam o centro da discussão. No entanto, na pesquisa científica atual, outros tipos de modelos exibem avanços contínuos; em particular, modelos BERT \textit{(Bidirectional encoder representations from transformers)} estão sempre no centro da discussão do campo de NLP (Processamento de Linguagem Natural), sendo utilizados para tarefas de classificação de texto, como análise de sentimento e reconhecimento de entidades nomeadas. Uma dessas tarefas consiste no \textit{Question Answering} Extrativo, que se difere dos mecanismos de busca modernos (ex: RAG) por buscar informações diretamente no texto, retornando uma passagem, a partir de um \textit{prompt,} sem recorrer a contexto externo \cite{le}. Diversos trabalhos mostram numerosas aplicações de tarefas desempenhadas por modelos BERT; um trabalho mostra o QA Extrativo sendo utilizado para inferência de locais de desastres naturais em texto \cite{sharma}.
 
-Traga, por gentileza, a motivação do problema. Onde mora o problema? Tipo... essa área traz tais demandas, mas tal problema existe. Pode ser feito de tal jeito, mas aí tais problemas surgem. (Isso é a base pra introduzir sua solução). Traga umas definições pra já ir acostumando o leitor. Introduza termos técnicos bem de leve, os bem gerais mesmo.
+Tais modelos são elaborados sendo submetidos a um pré-treinamento em um conjunto geralmente massivo de dados, seguido de um processo de \textit{fine-tuning} em um \textit{dataset} para o desempenho de tarefas específicas. É importante destacar que, compreensivelmente, os modelos de fronteira, assim como a pesquisa em NLP como um todo, é preponderantemente debruçada tendo a língua inglesa como padrão universal. Nesse sentido, cabe o questionamento a respeito dos impactos dos idiomas dos dados de treinamento e \textit{fine-tuning} no desempenho dos modelos em idiomas diversos, além do inglês. Afinal, há um vasto volume de modelos disponíveis publicamente, sejam em inglês, multilíngues, e nativos de outros idiomas, e os impactos dos idiomas utilizados nos treinamentos não é tão autoevidente.
 
-Nesse cenário, essas coisas novas surgiram pra trazer tal e tal benefício. Mas tem porém, tal e tal coisa acontece. Cite algo. Assim, surge a necessidade de fazer pipipi popopo do seu jeito. ``A motivação da pesquisa surge na necessidade de investigar essas lacunas''.
-
-No ecossistema X, sua solução se manifesta de tal forma e pode ser usada de tal forma. Isso, já vai dando sinais de sua metodologia. Contudo, tais limitações etc etc: não combina ou usa tais coisas, o que limita os ganhos. Logo, essa revisão tem como objetivo ``mapear e analisar métodos já estudados, buscando fundamentos para a construção integrada X''. Essa Revisão Sistemática de Literatura (RSL) busca identificar (liste tudo), ``práticas, mecanismos'' para esse objetivo específico. Seja completo logo.
-
-Explicar como funciona o uso e avaliação do QA Extrativo.
-
-O QA Extrativo pode ser utilizado em aplicações específicas: inferir locais de desastres naturais \cite{sharma}.
-
-O português não é um idioma \textit{low-resource,} mas sim \textit{less-represented} \cite{villegas}.
-
-Definição de QA tradicional e moderno (similares a RAG): \cite{le}
-
-Conceito de \textit{Machine Reading Comprehension} \cite{ning}
+Esta revisão sistemática de literatura (RSL) visa investigar como esse efeito do idioma, sendo o modelo submetido a diferentes tamanhos de textos, é observado na literatura atual.
 
 \section{Relato da Revisão de Literatura}
 
@@ -215,7 +203,7 @@ No estudo sobre o modelo BERTomelo \cite{bertomelo}, os resultados do modelo nat
 
 É evidente que a atenção dos modelos BERT fica naturalmente distribuída entre palavras semanticamente importantes independentes da sua posição, enquando modelos generativos têm atenção decaída em tokens mais distantes \cite{deshpande}. Esse fato por si só indica o seu potencial de processamento de contextos longos, explicado pelo seu mecanismo de atenção bidirecional \cite{tiwari}.
 
-No entanto, trabalhos \cite{le} sugerem que "muitos detalhes" no texto pode prejudicar o desempenho do modelo em QA extrativo, a partir de testes empíricos, o que indica potencial lacuna dos modelos BERT em QA de longo contexto. Por fim, um trabalho \cite{bertomelo} conclui considerando possíveis trabalhos futuros como aqueles que tratem de longo contexto ou utilizem melhor as capacidades de longo contexto do ModernBERT (8192 \textit{tokens}), visto que o BERTomelo, modelo nativo em português, possui suporte apenas a 1024.
+No entanto, trabalhos \cite{le} sugerem que ``muitos detalhes'' no texto pode prejudicar o desempenho do modelo em QA extrativo, a partir de testes empíricos, o que indica potencial lacuna dos modelos BERT em QA de longo contexto. Por fim, um trabalho \cite{bertomelo} conclui considerando possíveis trabalhos futuros como aqueles que tratem de longo contexto ou utilizem melhor as capacidades de longo contexto do ModernBERT (8192 \textit{tokens}), visto que o BERTomelo, modelo nativo em português, possui suporte apenas a 1024.
 
 \section{Conclusões}
 Conclui-se que a transferência translíngue é um fenômeno conhecido pela literatura atual e um problema de pesquisa de interesse notável no meio científico. É sabido que é um fenômeno que de fato observa-se, sendo modelos multilíngues capazes de realizar inferência para idiomas mal vistos no pré-treinamento de forma altamente promissora. No entanto, estudos comparativos mostram que há perda significativa de desempenho qualitativo quando o modelo não é especializado no idioma da tarefa, ou pelo menos seja pré-treinado na família de idiomas da tarefa. Longos contextos podem agravar os resultados ainda mais. Esta RSL alcançou, através da investigação sistemática, a resposta às perguntas de pesquisa.
