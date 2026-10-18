@@ -30,7 +30,7 @@
   \end{abstract}%
 }
 
-\title{\textbf{Revisão Sistemática sobre Capacidade de Transferência Entre Idiomas em Inferência de Modelos de Linguagem BERT voltada para QA Extrativo de Longo Contexto}}
+\title{\textbf{Revisão Sistemática sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem BERT voltada para QA Extrativo de Longo Contexto}}
 \author{
     Victor Hugo Santos Bitencourt \\
     Departamento de Ciências Exatas e da Terra, Campus I \\
@@ -70,18 +70,36 @@ Escreva alguma coisa.
 Escreva algo
 
 \subsection{Definição do PICOC}
-Escreva alguma coisa.
+Foi utilizado o \textit{framework} PICOC para auxiliar na elaboração de \textit{strings} de busca e busca do entendimento do tema. Cada elemento do PICOC fica explicitado a seguir.
 
 \begin{itemize}
-    \item Population (População):
-    \item Intervention (Intervenção):
-    \item Comparison (Comparação):
-    \item Outcome (Resultado):
-    \item Context (Contexto):
+    \item Population (População): Modelos baseados em BERT/Transformers encoder-only aplicados a Question Answering extrativo.
+    \item Intervention (Intervenção): Uso de janelas de contexto maiores e/ou modelos pré-treinados em língua específica, com fine-tuning e avaliação alinhados ao idioma.
+    \item Comparison (Comparação): Modelos multilíngues, modelos com menor janela de contexto e/ou modelos cujo pré-treinamento não é especializado na língua da tarefa.
+    \item Outcome (Resultado): Desempenho em QA extrativo, especialmente métricas relacionadas ao desempenho sob diferentes tamanhos de contexto.
+    \item Context (Contexto): Question Answering extrativo, com ênfase em textos longos e idiomas diferentes, particularmente português.
 \end{itemize}
 
 \subsection{Critérios de Inclusão e Exclusão}
-Escreva algo aqui
+Foram definidos critérios a fim de filtrar temas que estivessem mais alinhados ao assunto que se busca na pesquisa. Os critérios compõem juntos uma nota a ser utilizada posteriormente. No total, consistem em 5 critérios de inclusão e 4 critérios de exclusão.
+
+\begin{itemize}
+    \item Critérios de Inclusão:
+    \begin{itemize}
+        \item Foco no campo de estudo de NLP.
+        \item Trabalhos que tratam de forma concreta o assunto de inferência translíngue.
+        \item Foco em modelos BERT ou \textit{encoder-only.}
+        \item Trabalhos que tocam no tema de processamento de longos contextos.
+        \item Trata diretamente de QA Extrativo.
+    \end{itemize}
+    \item Critérios de Exclusão:
+    \begin{itemize}
+        \item Desvio de domínio: assunto ou área de estudo do artigo se desvia consideravelmente do foco da pesquisa.
+        \item Foco em modelos não-BERT ou \textit{encoder-only:} LLMs, CNNs, LSTMs, etc.
+        \item Não trata de \textit{fine-tuning} nem de forma transversal, se limitando a pré-treinamento ou nenhum dos dois.
+        \item Sem avaliação quantitativa ou métricas de validação.
+    \end{itemize}
+\end{itemize}
 
 \subsection{Bases de Dados}
 As buscas foram feitas nos repositórios de artigos \textit{Springer Link} e \textit{ACL Anthology}. A primeira busca foi realizada no \textit{Springer Link}, base que se mostrou promissora em volume de conteúdo para os temas estudados, com recorte temporal de 6 meses. A busca no \textit{ACL Anthology} foi motivada pela busca de uma base mais alinhada com o campo de pesquisa em NLP, e os resultados foram acessados via \textit{Google Scholar}. A terceira busca foi feita no \textit{Springer Link}, sem recorte temporal, utilizando uma \textit{string} de busca mais bem delimitada ao que se deseja pesquisar nesta revisão.

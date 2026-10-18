@@ -203,10 +203,10 @@ strings de busca
 conducao
 definir criterio score para aceitacao dos artigos, e entao:
 planilha-resumo dos resultados
+criterios de inclusao e exclusao
+perguntas de avaliacao de qualidade
 analise qualitativa dos resultados
 conclusoes
-perguntas de avaliacao de qualidade
-criterios de inclusao e exclusao
 questoes de pesquisa
 definicao do picoc
 relato RSL
