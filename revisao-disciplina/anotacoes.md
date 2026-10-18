@@ -209,7 +209,6 @@ perguntas de avaliacao de qualidade
 questoes de pesquisa
 analise qualitativa dos resultados
 conclusoes
-relato RSL
 conclusao
 introducao
 resumo
