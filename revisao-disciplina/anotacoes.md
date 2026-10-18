@@ -204,11 +204,11 @@ conducao
 definir criterio score para aceitacao dos artigos, e entao:
 planilha-resumo dos resultados
 criterios de inclusao e exclusao
+definicao do picoc
 perguntas de avaliacao de qualidade
+questoes de pesquisa
 analise qualitativa dos resultados
 conclusoes
-questoes de pesquisa
-definicao do picoc
 relato RSL
 conclusao
 introducao

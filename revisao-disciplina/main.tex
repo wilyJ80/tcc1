@@ -67,17 +67,21 @@ No ecossistema X, sua solução se manifesta de tal forma e pode ser usada de ta
 Escreva alguma coisa.
 
 \subsection{Questões de Pesquisa}
-Escreva algo
+\begin{itemize}
+    \item Como o alinhamento entre a língua do pré-treinamento e do fine-tuning influencia o desempenho de modelos baseados em BERT em \textit{Question Answering} extrativo, entre outras tarefas \textit{downstream?}
+    \item Como a literatura caracteriza o desempenho qualitativo de modelos encoder-only monolíngues e multilíngues em tarefas de \textit{Question Answering} extrativo em português?
+    \item Qual é a influência do tamanho do texto a ser processado no desempenho qualitativo de modelos baseados em BERT para tarefas \textit{downstream,} em particular o QA Extrativo?
+\end{itemize}
 
 \subsection{Definição do PICOC}
 Foi utilizado o \textit{framework} PICOC para auxiliar na elaboração de \textit{strings} de busca e busca do entendimento do tema. Cada elemento do PICOC fica explicitado a seguir.
 
 \begin{itemize}
-    \item Population (População): Modelos baseados em BERT/Transformers encoder-only aplicados a Question Answering extrativo.
+    \item Population (População): Modelos baseados em BERT/Transformers encoder-only aplicados a \textit{Question Answering} extrativo.
     \item Intervention (Intervenção): Uso de janelas de contexto maiores e/ou modelos pré-treinados em língua específica, com fine-tuning e avaliação alinhados ao idioma.
     \item Comparison (Comparação): Modelos multilíngues, modelos com menor janela de contexto e/ou modelos cujo pré-treinamento não é especializado na língua da tarefa.
     \item Outcome (Resultado): Desempenho em QA extrativo, especialmente métricas relacionadas ao desempenho sob diferentes tamanhos de contexto.
-    \item Context (Contexto): Question Answering extrativo, com ênfase em textos longos e idiomas diferentes, particularmente português.
+    \item Context (Contexto): \textit{Question Answering} extrativo, com ênfase em textos longos e idiomas diferentes, particularmente português.
 \end{itemize}
 
 \subsection{Critérios de Inclusão e Exclusão}
