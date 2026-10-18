@@ -209,31 +209,13 @@ Ademais, certos trabalhos trazem detalhes linguísticos importantes de serem lev
 
 \subsubsection{Como a literatura caracteriza o desempenho qualitativo de modelos encoder-only monolíngues e multilíngues em tarefas de Question Answering extrativo em português, dentre outras tarefas \textit{downstream}?}
 
-Oliveira: 
-
-Os resultados são convincentes, a partir do fato que a avaliação é feita utilizando \textit{dataset} totalmente nativo, o LeNER-Br \cite{lener}, especializado em informação jurídica. Explicitamente mostra a superioridade de modelos monolíngues em português em comparação com modelos multilíngues em métricas de precisão, acurácia e \textit{F1-score.}
-
-Enzo:
-
-Levanta que é sabido que modelos nativos em português já existentes há um tempo, como o BERTtimbau, já superaram multilíngues em diversas tarefas de inferência no idioma português. O modelo nativo apresentado no trabalho, o NorBERTo, performa bem, mesmo não sendo pré-treinado em tanto conteúdo quando o ModernBERT original, informação que sustenta ainda mais a superioridade dos modelos nativos mesmo quando com menor contagem de parâmetros.
+No estudo sobre o modelo BERTomelo \cite{bertomelo}, os resultados do modelo nativo frente a outros modelos de estado da arte são promissores, a partir do fato que a avaliação é feita utilizando \textit{dataset} totalmente nativo, o LeNER-Br \cite{lener}, especializado em informação jurídica. Explicitamente mostra a superioridade de modelos monolíngues em português em comparação com modelos multilíngues em métricas de precisão, acurácia e \textit{F1-score.} O estudo sobre o modelo NorBERTo \cite{norberto} levanta que é sabido que modelos nativos em português já existentes há um tempo, como o BERTtimbau, já superaram multilíngues em diversas tarefas de inferência no idioma português. O modelo NorBERTo performa bem, mesmo não sendo pré-treinado em tanto conteúdo quando o ModernBERT original, arquitetura no qual se baseia, e essa informação sustenta ainda mais a superioridade dos modelos nativos mesmo quando com menor contagem de parâmetros, segundo o trabalho.
 
 \subsubsection{Qual é a influência do tamanho do texto a ser processado no desempenho qualitativo de modelos baseados em BERT para tarefas downstream, em particular o QA Extrativo?}
 
-Oliveira:
+É evidente que a atenção dos modelos BERT fica naturalmente distribuída entre palavras semanticamente importantes independentes da sua posição, enquando modelos generativos têm atenção decaída em tokens mais distantes \cite{deshpande}. Esse fato por si só indica o seu potencial de processamento de contextos longos, explicado pelo seu mecanismo de atenção bidirecional \cite{tiwari}.
 
-Conclui considerando possíveis trabalhos futuros como aqueles que tratem de longo contexto ou utilizem melhor as capacidades de longo contexto do ModernBERT (8192 \textit{tokens}), visto que o BERTomelo possui suporte apenas a 1024.
-
-Le:
-
-Sugere que "muitos detalhes" no texto pode prejudicar o desempenho do modelo em QA extrativo, o que indica potencial lacuna dos modelos BERT em QA de longo contexto.
-
-Tiwari:
-
-Modelo BERT possui o poder da atenção bidirecional que já ajuda na compreensão de longos contextos.
-
-Deshpande:
-
-O artigo menciona trabalhos nos quais é evidenciado que a atenção dos modelos BERT fica naturalmente distribuída entre palavras semanticamente importantes independentes da sua posição, enquando modelos generativos têm atenção decaída em tokens mais distantes. \cite{deshpande}
+No entanto, trabalhos \cite{le} sugerem que "muitos detalhes" no texto pode prejudicar o desempenho do modelo em QA extrativo, a partir de testes empíricos, o que indica potencial lacuna dos modelos BERT em QA de longo contexto. Por fim, um trabalho \cite{bertomelo} conclui considerando possíveis trabalhos futuros como aqueles que tratem de longo contexto ou utilizem melhor as capacidades de longo contexto do ModernBERT (8192 \textit{tokens}), visto que o BERTomelo, modelo nativo em português, possui suporte apenas a 1024.
 
 \section{Conclusões}
 Suas conclusões.
