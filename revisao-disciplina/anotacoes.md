@@ -212,3 +212,7 @@ conclusao
 introducao
 resumo
 abstract
+
+anteprojeto: precisa explicar mais visualmente, inclusive os conceitos. a melhor coisa pra explicar visualmente e como o qa extrativo funciona.
+
+motivacao: uso de modelos em ingles no mercado. estudar bem como isso se da e constatar que e o que realmente acontece
