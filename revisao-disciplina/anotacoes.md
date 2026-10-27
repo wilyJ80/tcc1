@@ -220,3 +220,5 @@ motivacao: uso de modelos em ingles no mercado. estudar bem como isso se da e co
 outro estudo sobre tamanho de contexto: https://arxiv.org/html/2512.00323v1
 
 estudo sobre o desenvolvimento do squad v2: https://aclanthology.org/P18-2124.pdf
+
+estudo focado em BERT conceitualmete, envolvendo SQuAD: https://arxiv.org/abs/1810.04805
