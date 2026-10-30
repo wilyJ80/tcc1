@@ -9,6 +9,7 @@ theme: "Pittsburgh"
 navigation: "empty"
 colortheme: "crane"
 fonttheme: "structuresmallcapsserif"
+lang: pt-BR
 ---
 
 # Objetivo de Pesquisa
@@ -25,7 +26,15 @@ Sintetizar evidências sobre transferência entre idiomas e tamanho de contexto 
 
 - Qual é a influência do tamanho do texto a ser processado no desempenho qualitativo de modelos baseados em BERT para tarefas *downstream,* em particular o QA Extrativo?
 
-# O problema: responder bem em outra língua e em textos longos
+# Mecanismo Principal
+
+![Fonte: Chandraparsad et al.](./screenmodel.png)
+
+# Base de Dados
+
+![Fonte: HuggingFace.](./screenqa.png)
+
+# O problema investigado: responder bem em outra língua e em textos longos
 
 ::: {.block}
 ### QA extrativo
@@ -34,7 +43,7 @@ Dada uma pergunta e um texto, o modelo identifica e retorna o trecho que contém
 
 ::: {.block}
 ### Transferência translíngue
-Um modelo treinado em certos idiomas é aplicado a outro — por exemplo, do inglês para o português.
+Um modelo treinado em certos idiomas é aplicado a outro; por exemplo, do inglês para o português.
 :::
 
 ::: {.block}
@@ -62,11 +71,11 @@ Extrativo.
 
 # Seleção e Mapeamento dos Artigos
 
-![diagram](diagram.dot.svg)
+![Fonte: o autor](diagram.dot.svg)
 
 # Seleção e Mapeamento dos Artigos
 
-![plot](prisma_por_base.png)
+![Fonte: o autor](prisma_por_base.png)
 
 # QP1: Estado da Arte em QA Extrativo
 
@@ -167,3 +176,9 @@ Usar EM e F1.
 # Conclusão
 
 Português + QA extrativo + janelas longas formam uma lacuna de pesquisa relevante.
+
+# Referências
+
+https://huggingface.co/datasets/rajpurkar/squad_v2/viewer
+
+., C., Kyaw, K.T., Jain, R. et al. A systematic evaluation of transformer-based architectures for fake news detection in the low-resource Burmese language. Sci Rep 16, 25667 (2026). https://doi.org/10.1038/s41598-026-56647-7
