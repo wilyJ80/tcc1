@@ -30,7 +30,7 @@
   \end{abstract}%
 }
 
-\title{\textbf{Avaliação sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem BERT voltada para QA Extrativo de Longo Contexto}}
+\title{\textbf{Avaliação sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem ModernBERT voltada para QA Extrativo de Longo Contexto}}
 \author{
     Victor Hugo Santos Bitencourt \\
     Departamento de Ciências Exatas e da Terra, Campus I \\
@@ -53,9 +53,17 @@ Diante desse cenário, este trabalho visa investigar como esse efeito do idioma,
 
 \section{Objetivos}
 
-Avaliar a partir de critérios objetivos a influência do tamanho dos textos de entrada e do alinhamento de idiomas entre pré-treinamento e \textit{fine-tuning} na qualidade de inferência de modelos BERT na tarefa de \textit{Question Answering} extrativo, comparando texto longos com textos curtos e modelos multilíngues com nativos em português.
+Investigar experimentalmente a influência do alinhamento linguístico e do tamanho da janela de contexto no desempenho de modelos baseados em arquiteturas BERT para tarefas de \textit{Question Answering} (QA) extrativo em português, por meio da implementação de um ambiente experimental e da avaliação comparativa de diferentes modelos e configurações de inferência.
 
 \subsection{Objetivos Específicos}
+
+\begin{itemize}
+    \item Implementar um ambiente experimental para execução e avaliação de modelos BERT em tarefas de QA extrativo, contemplando o processamento dos conjuntos de dados, a preparação dos modelos e a execução das inferências.
+    \item Selecionar e configurar modelos pré-treinados monolíngues e multilíngues, baseados na arquitetura \textit{ModernBERT.}
+    \item Implementar experimentos controlados que permitam variar o tamanho de texto de entrada e comparar o desempenho dos modelos em diferentes configurações de idioma, mantendo condições de avaliação consistentes.
+    \item Avaliar quantitativamente os resultados obtidos, utilizando métricas consolidadas para QA extrativo, especialmente \textit{Exact Match} (EM) e \textit{token-level} F1, considerando as configurações experimentais.
+    \item Analisar os resultados experimentais a fim de identificar os impactos do alinhamento linguístico e do tamanho do texto de entrada na qualidade das respostas extraídas, confrontando os resultados obtidos com as lacunas e evidências identificadas na literatura existente.
+\end{itemize}
 
 \section{Justificativas e Contribuições}
 
