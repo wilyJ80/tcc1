@@ -1,0 +1,334 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,brazil]{babel}
+\usepackage{geometry}
+\geometry{top=3cm,bottom=2cm,left=3cm,right=2cm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{xltabular}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+% Define resumo environment for Portuguese abstract
+\newenvironment{resumo}{%
+  \otherlanguage{brazil}%
+  \renewcommand{\abstractname}{Resumo}%
+  \begin{abstract}%
+}{%
+  \end{abstract}%
+}
+
+\title{\textbf{Revisão Sistemática sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem BERT voltada para QA Extrativo de Longo Contexto}}
+\author{
+    Victor Hugo Santos Bitencourt \\
+    Departamento de Ciências Exatas e da Terra, Campus I \\
+    Universidade do Estado da Bahia (UNEB) \\
+    Salvador, Bahia, Brasil. \\
+    \texttt{abjurandam@gmail.com}
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{resumo}
+Este artigo apresenta uma Revisão Sistemática da Literatura (RSL) sobre a capacidade de transferência translíngue e o impacto de longos contextos em modelos baseados em arquiteturas \textit{encoder-only} (família BERT) aplicados a \textit{Question Answering} (QA) Extrativo. Utilizando o \textit{framework} PICOC, conduziu-se uma triagem em bases científicas que resultou na seleção de 16 artigos relevantes após um rigoroso processo de filtragem. Os resultados apontam que, embora modelos multilíngues realizem transferência translíngue em cenários de baixa representação, sofrem com a ``maldição da multilingualidade'', sendo superados por modelos monolíngues nativos em português. Ademais, constata-se que o processamento de longos contextos em QA extrativo ainda representa um desafio empírico e uma lacuna metodológica, especialmente frente às capacidades de expansão de janelas em arquiteturas recentes como o \textit{ModernBERT}.
+\end{resumo}
+
+\begin{otherlanguage}{english}
+\begin{abstract}
+This paper presents a Systematic Literature Review (SLR) on cross-lingual transfer capabilities and the impact of long contexts in encoder-only models (BERT family) applied to Extractive Question Answering (QA). Using the PICOC framework, a systematic search across scientific databases yielded 16 relevant articles following a rigorous screening process. The findings indicate that while multilingual models enable cross-lingual transfer in low-resource settings, they suffer from the ``curse of multilinguality'' and are consistently outperformed by native Portuguese monolingual models. Furthermore, processing long contexts in extractive QA remains an empirical challenge and a methodological gap, particularly regarding the window expansion capabilities of recent architectures such as ModernBERT.
+\end{abstract}
+\end{otherlanguage}
+
+\section{Introdução}
+No âmbito da Inteligência Artificial, os Grandes Modelos de Linguagem (LLMs) dominam o centro da discussão. No entanto, na pesquisa científica atual, outros tipos de modelos exibem avanços contínuos; em particular, modelos BERT \textit{(Bidirectional encoder representations from transformers)} estão sempre no centro da discussão do campo de NLP (Processamento de Linguagem Natural), sendo utilizados para tarefas de classificação de texto, como análise de sentimento e reconhecimento de entidades nomeadas. Uma dessas tarefas consiste no \textit{Question Answering} Extrativo, que se difere dos mecanismos de busca modernos (ex: RAG) por buscar informações diretamente no texto, retornando uma passagem, a partir de um \textit{prompt,} sem recorrer a contexto externo \cite{le}. Diversos trabalhos mostram numerosas aplicações de tarefas desempenhadas por modelos BERT; um trabalho mostra o QA Extrativo sendo utilizado para inferência de locais de desastres naturais em texto \cite{sharma}.
+
+Tais modelos são elaborados sendo submetidos a um pré-treinamento em um conjunto geralmente massivo de dados, seguido de um processo de \textit{fine-tuning} em um \textit{dataset} para o desempenho de tarefas específicas. É importante destacar que, compreensivelmente, os modelos de fronteira, assim como a pesquisa em NLP como um todo, é preponderantemente debruçada tendo a língua inglesa como padrão universal. Nesse sentido, cabe o questionamento a respeito dos impactos dos idiomas dos dados de treinamento e \textit{fine-tuning} no desempenho dos modelos em idiomas diversos, além do inglês. Afinal, há um vasto volume de modelos disponíveis publicamente, sejam em inglês, multilíngues, e nativos de outros idiomas, e os impactos dos idiomas utilizados nos treinamentos não é tão autoevidente.
+
+Esta revisão sistemática de literatura (RSL) visa investigar como esse efeito do idioma, sendo o modelo submetido a diferentes tamanhos de textos, é observado na literatura atual.
+
+\section{Relato da Revisão de Literatura}
+
+\subsection{Questões de Pesquisa}
+\begin{itemize}
+    \item Qual o estado da arte no \textit{Question Answering} Extrativo?
+    \item Como o alinhamento entre a língua do pré-treinamento e do fine-tuning influencia o desempenho de modelos baseados em BERT em \textit{Question Answering} extrativo, entre outras tarefas \textit{downstream?}
+    \item Como a literatura caracteriza o desempenho qualitativo de modelos encoder-only monolíngues e multilíngues em tarefas de \textit{Question Answering} extrativo em português, dentre outras tarefas \textit{downstream?}
+    \item Qual é a influência do tamanho do texto a ser processado no desempenho qualitativo de modelos baseados em BERT para tarefas \textit{downstream,} em particular o QA Extrativo?
+\end{itemize}
+
+\subsection{Definição do PICOC}
+Foi utilizado o \textit{framework} PICOC para auxiliar na elaboração de \textit{strings} de busca e busca do entendimento do tema. Cada elemento do PICOC fica explicitado a seguir.
+
+\begin{itemize}
+    \item Population (População): Modelos baseados em BERT/Transformers encoder-only aplicados a \textit{Question Answering} extrativo.
+    \item Intervention (Intervenção): Uso de janelas de contexto maiores e/ou modelos pré-treinados em língua específica, com fine-tuning e avaliação alinhados ao idioma.
+    \item Comparison (Comparação): Modelos multilíngues, modelos com menor janela de contexto e/ou modelos cujo pré-treinamento não é especializado na língua da tarefa.
+    \item Outcome (Resultado): Desempenho em QA extrativo, especialmente métricas relacionadas ao desempenho sob diferentes tamanhos de contexto.
+    \item Context (Contexto): \textit{Question Answering} extrativo, com ênfase em textos longos e idiomas diferentes, particularmente português.
+\end{itemize}
+
+\subsection{Critérios de Inclusão e Exclusão}
+Foram definidos critérios a fim de filtrar temas que estivessem mais alinhados ao assunto que se busca na pesquisa. Os critérios compõem juntos uma nota a ser utilizada posteriormente. No total, consistem em 5 critérios de inclusão e 4 critérios de exclusão.
+
+\begin{itemize}
+    \item Critérios de Inclusão:
+    \begin{itemize}
+        \item Foco no campo de estudo de NLP.
+        \item Trabalhos que tratam de forma concreta o assunto de inferência translíngue.
+        \item Foco em modelos BERT ou \textit{encoder-only.}
+        \item Trabalhos que tocam no tema de processamento de longos contextos.
+        \item Trata diretamente de QA Extrativo.
+    \end{itemize}
+    \item Critérios de Exclusão:
+    \begin{itemize}
+        \item Desvio de domínio: assunto ou área de estudo do artigo se desvia consideravelmente do foco da pesquisa.
+        \item Foco em modelos não-BERT ou \textit{encoder-only:} LLMs, CNNs, LSTMs, etc.
+        \item Não trata de \textit{fine-tuning} nem de forma transversal, se limitando a pré-treinamento ou nenhum dos dois.
+        \item Sem avaliação quantitativa ou métricas de validação.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Bases de Dados}
+As buscas foram feitas nos repositórios de artigos \textit{Springer Link} e \textit{ACL Anthology}. A primeira busca foi realizada no \textit{Springer Link}, base que se mostrou promissora em volume de conteúdo para os temas estudados, com recorte temporal de 6 meses. A busca no \textit{ACL Anthology} foi motivada pela busca de uma base mais alinhada com o campo de pesquisa em NLP, e os resultados foram acessados via \textit{Google Scholar}. A terceira busca foi feita no \textit{Springer Link}, sem recorte temporal, utilizando uma \textit{string} de busca mais bem delimitada ao que se deseja pesquisar nesta revisão.
+
+\subsection{Strings de Busca}
+\textit{String} de busca geral, utilizada no \textit{Springer Link,} com escopo geral:
+
+\begin{verbatim}
+("BERT" OR "encoder-only transformer")
+AND
+("extractive question answering" OR "question answering" OR 
+"machine reading comprehension")
+AND
+("long context" OR "long-context" OR "long document" OR "context window" 
+OR "sequence length")
+AND
+(Portuguese OR multilingual OR monolingual OR "language-specific")
+\end{verbatim}
+
+\textit{String} utilizada no \textit{Google Scholar} filtrando resultados do \textit{ACL Anthology:}
+
+\begin{verbatim}
+"BERT" question answering "multilingual" "context size" 
+cross-lingual transfer site:aclanthology.org
+\end{verbatim}
+
+\textit{String} utilizada por fim, no \textit{Springer Link:}
+
+\begin{verbatim}
+"cross-lingual transfer" AND "BERT" AND "fine-tuning" AND NOT "LLM"
+\end{verbatim}
+
+\subsection{Perguntas de Avaliação de Qualidade}
+As Perguntas de Avaliação de Qualidade foram utilizadas para direcionar a leitura dos textos completos a fim de priorizar uma extração de dados efetiva e atenta. As perguntas a serem respondidas durante a leitura do texto completo foram definidas como:
+
+\begin{itemize}
+    \item Como o trabalho apresenta o impacto de contextos longos em inferência?
+    \item Que modelos, técnicas e métricas de avaliação o trabalho traz?
+    \item Como o trabalho apresenta a tarefa de QA Extrativo?
+    \item Como o trabalho discute a questão da inferência translíngue, e que idiomas são trazidos no pré-treinamento e no \textit{fine-tuning?}
+    \item Que limitações, diferenciais e lacunas de pesquisa o trabalho porventura sugere?
+\end{itemize}
+
+\subsection{Condução}
+A condução desta revisão sistemática dá-se a partir da coleta de artigos da base correspondente, realizada a partir de uma \textit{string} de busca formulada a partir das questões de pesquisa e o PICOC. Os artigos duplicados são removidos, e a triagem inicial é realizada, que consiste numa leitura de título e resumo, aplicando os critérios de inclusão e exclusão.
+
+O segundo passo se dá a partir da leitura completa dos artigos retornados, também seguindo os critérios de inclusão e exclusão e registrando-os. No mesmo momento é feito o registro da nota dada ao artigo com base nos critérios de inclusão (ponto positivo) e exclusão (ponto negativo), assim como a anotação de informações que dialogam com tanto com os critérios quanto com as perguntas de pesquisa. Foi definido que, ao final de toda a revisão, seriam considerados aceitos os artigos com nota maior que zero.
+
+Por fim, para a base na qual foi feita a busca, foi feita uma avaliação rápida se o conteúdo apreendido traz progresso evidente na resposta das perguntas de pesquisa. Se não, o processo é repetido reformulando as perguntas de pesquisa e PICOC a fim de construir uma nova \textit{string} de busca, potencialmente em outra base, seguida da pesquisa. Foi dessa forma que esse trabalho se valeu de mais de um método de busca e repositório de artigos, adotando uma postura investigativa e crítica sobre o tema em questão, e sobretudo a metodologia adotada para buscar o conhecimento.
+
+\section{Resultados das Triagens}
+Foram removidos 5 artigos duplicados. As 3 buscas, correspondentes a 2 bases, retornaram no total 394 resultados de pesquisa (soma de 389 artigos encontrados no total e 5 resultados duplicados). Após triagem por título e resumo, sobraram 39 artigos. Após leitura por texto completo, restaram 16 artigos, que logo em seguida tiveram seus dados extraídos após a análise individual dos critérios de inclusão e exclusão. 
+
+Por base, a primeira busca no \textit{Springer Link} retornou 98 trabalhos, sendo 25 passados para leitura completa, e 10 aceitos. A segunda busca, no \textit{ACL Anthology} retornou 46 resultados, tendo 4 sido lidos inteiramente e 2 aceitos. A terceira busca, também no \textit{Springer Link}, trouxe 250 artigos, com 5 duplicados, 10 lidos na totalidade e 4 aceitos. Os resultados da triagem são mostrados a seguir, assim como o fluxograma da busca consolidada entre as bases.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{static/prisma_por_base.png}
+    \caption{Gráfico de Resultados por Base}
+    \label{fig:exemplo2}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{static/diagram.dot.png}
+    \caption{Fluxograma de seleção e triagem consolidada de artigos}
+    \label{fig:exemplo}
+\end{figure}
+
+Os artigos aceitos, suas respectivas identificações, critérios observados e anotações, podem ser vistos na tabela-resumo em anexo.
+
+\subsection{Análise Qualitativa dos Resultados}
+Após a realização da análise dos artigos, responde-se as questões de pesquisa uma a uma.
+
+\subsubsection{Qual o estado da arte no \textit{Question Answering} Extrativo?}
+
+O uso de LLMs para tarefas de extração de passagens no texto que respondam perguntas é comum, mas nem sempre é a opção mais performática, econômica e precisa.
+
+Tarefas de classificação, tais como QA Extrativo, podem ser feitas com tais modelos generativos, como LLMs. No entanto, resultados podem ser inferiores: tais modelos perdem atenção de \textit{tokens} mais distantes, podendo causar ``esquecimento'' das informações ou alucinações. Por outro lado, modelos encoder-only tais como BERT podem retornar resultados de extração melhores, por terem um mecanismo de atenção bidirecional, que evita esse efeito \cite{deshpande, wei}. De forma geral, em comparação com LLMs, modelos BERT têm vantagens de custo, latência e não estarem expostos a alucinações, sendo tão bons ou até melhores para muitas tarefas por conta desse mecanismo de atenção \cite{norberto}, dispensando até mesmo \textit{fine-tuning} no domínio a ser aplicado, mostrando o potencial de inferência \textit{zero-shot} do modelo para essa tarefa \cite{sharma}.
+
+Especialmente por esses motivo, os modelos \textit{encoder-only} em geral dominam os \textit{benchmarks} de QA Extrativo. SQuAD 2.0 \textit{(Stanford Question Answering Dataset)} é um \textit{dataset} muito utilizado em QA \cite{le, deshpande, savant}, no qual o texto, a passagem da resposta e os índices dos caracteres na passagem da resposta fazem parte do conjunto de dados para treinar o modelo. EM \textit{(Exact Match)} e \textit{token-level F1} são métricas comumente utilizadas para avaliação nessa tarefa específica \cite{savant}. Ainda sustentando o uso de modelos \textit{encoder-only,} trabalhos existentes deixam muito claro que LLMs podem demonstrar imprecisão na detecção dos índices, resultando em desempenho pior que modelos BERT em \textit{benchmarks} \cite{elvas}.
+
+\subsubsection{Como o alinhamento entre a língua do pré-treinamento e do fine-tuning influencia o desempenho de modelos baseados em BERT em Question Answering extrativo, entre outras tarefas \textit{downstream?}}
+
+Modelos multilíngues conseguem, por si só, realizar inferência em idiomas pouco representados na sua base de dados, ou até mesmo não representados. Estudos \cite{yadav} trouxeram sobretudo \textit{benchmarks} a respeito dos modelos mBERT e XLM-R, evidenciando esse fato em idiomas pouco representados, como birmanês \cite{kyaw} e Oromo \cite{edeti}. Em especial, o estudo acerca do birmanês afirma de forma clara o fenômeno: modelos multilíngues são capazes de capturar relações linguísticas entre os idiomas de pré-treinamento, permitindo que esse efeito aconteça.
+
+No entanto, problemas surgem em tais modelos multilíngues, treinados com volume diverso de idiomas de famílias diferentes. Modelos multilíngues exibem limitações no que diz respeito ao desempenho em linguagem informal ou regional em idioma nativo, o que \textit{benchmarks} comuns não mostram, notadamente no idioma português \cite{villegas}. Além disso, estudos mostram de forma clara o fenômeno da ``Maldição da Multilingualidade'', no qual o desempenho do modelo diminui à medida que é treinado para cobrir mais línguas simultaneamente, sendo observado notadamente em idiomas menos representados \cite{bertomelo, savant, villegas}. 
+
+Os trabalhos medem isso de forma bem concreta. Em um deles, foi feita uma estratégia de validação na qual o modelo é treinado em vários idiomas, mas testado em um idioma deixado de fora (incluindo o português). Isso gerou métricas de queda de desempenho na transferência translígue, apesar de pequenas \cite{yadav}. Outro compara modelo nativo, multilíngue, e uma arquitetura distinta e conclui que pré-treinamento em idioma nativo é crucial para bons resultados \cite{kyaw}. Ainda outro traz uma avaliação de desempenho de modelos para a tarefa de NER, comparando modelos pré-treinados em idioma nativo, em famílias de idiomas e em diversos idiomas não relacionados: o efeito observado é que cada categoria respectivamente mencionada supera a outra em desempenho \cite{ramy}.
+
+Ademais, certos trabalhos trazem detalhes linguísticos importantes de serem levados em consideração no treinamento de modelos. Além da importância do alinhamento do idioma de pré-treinamento e \textit{fine-tuning,} idioma do \textit{dataset} também é um fator importante a se considerar, sendo \textit{datasets} nativos mais confiáveis do que traduções automáticas de \textit{datasets} em inglês \cite{ambala}.
+
+\subsubsection{Como a literatura caracteriza o desempenho qualitativo de modelos encoder-only monolíngues e multilíngues em tarefas de Question Answering extrativo em português, dentre outras tarefas \textit{downstream}?}
+
+No estudo sobre o modelo BERTomelo \cite{bertomelo}, os resultados do modelo nativo frente a outros modelos de estado da arte são promissores, a partir do fato que a avaliação é feita utilizando \textit{dataset} totalmente nativo, o LeNER-Br \cite{lener}, especializado em informação jurídica. Explicitamente mostra a superioridade de modelos monolíngues em português em comparação com modelos multilíngues em métricas de precisão, acurácia e \textit{F1-score.} O estudo sobre o modelo NorBERTo \cite{norberto} levanta que é sabido que modelos nativos em português já existentes há um tempo, como o BERTtimbau, já superaram multilíngues em diversas tarefas de inferência no idioma português. O modelo NorBERTo performa bem, mesmo não sendo pré-treinado em tanto conteúdo quando o ModernBERT original, arquitetura no qual se baseia, e essa informação sustenta ainda mais a superioridade dos modelos nativos mesmo quando com menor contagem de parâmetros, segundo o trabalho.
+
+\subsubsection{Qual é a influência do tamanho do texto a ser processado no desempenho qualitativo de modelos baseados em BERT para tarefas downstream, em particular o QA Extrativo?}
+
+É evidente que a atenção dos modelos BERT fica naturalmente distribuída entre palavras semanticamente importantes independentes da sua posição, enquando modelos generativos têm atenção decaída em tokens mais distantes \cite{deshpande}. Esse fato por si só indica o seu potencial de processamento de contextos longos, explicado pelo seu mecanismo de atenção bidirecional \cite{tiwari}.
+
+No entanto, trabalhos \cite{le} sugerem que ``muitos detalhes'' no texto pode prejudicar o desempenho do modelo em QA extrativo, a partir de testes empíricos, o que indica potencial lacuna dos modelos BERT em QA de longo contexto. Por fim, um trabalho \cite{bertomelo} conclui considerando possíveis trabalhos futuros como aqueles que tratem de longo contexto ou utilizem melhor as capacidades de longo contexto do ModernBERT (8192 \textit{tokens}), visto que o BERTomelo, modelo nativo em português, possui suporte apenas a 1024.
+
+\section{Conclusões}
+Conclui-se que a transferência translíngue é um fenômeno conhecido pela literatura atual e um problema de pesquisa de interesse notável no meio científico. É sabido que é um fenômeno que de fato observa-se, sendo modelos multilíngues capazes de realizar inferência para idiomas mal vistos no pré-treinamento de forma altamente promissora. No entanto, estudos comparativos mostram que há perda significativa de desempenho qualitativo quando o modelo não é especializado no idioma da tarefa, ou pelo menos seja pré-treinado na família de idiomas da tarefa. Longos contextos podem agravar os resultados ainda mais. Esta RSL alcançou, através da investigação sistemática, a resposta às perguntas de pesquisa.
+
+Trabalhos deixam claro a respeito de possíveis desenvolvimentos futuros, especialmente no que diz respeito à avaliação do impacto dos longos contextos nos resultados da inferência. Além disso, poucos modelos baseados em ModernBERT, uma das arquiteturas de BERT mais recentes, foram apresentados nos resultados, sendo dois deles pré-treinados em português. Isso evidencia avanços particulares em NLP no meio dos idiomas luso-brasileiros, e indica uma área de estudo promissora para investigações científicas.
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\clearpage
+\begin{landscape}
+
+\section{Planilha-resumo dos Resultados}
+
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.1}
+
+\begin{xltabular}{\linewidth}{
+    >{\raggedright\arraybackslash}X
+    *{9}{c}
+    >{\raggedright\arraybackslash}X
+}
+    \caption{Planilha-resumo dos trabalhos selecionados}
+    \label{tab:comparativo1} \\
+
+    \toprule
+    Trabalho & I1 & I2 & I3 & I4 & I5 &
+    E1 & E2 & E3 & E4 & Observações \\
+    \midrule
+    \endfirsthead
+
+    \multicolumn{11}{c}{
+        \tablename~\thetable\ -- continuação
+    } \\
+
+    \toprule
+    Trabalho & I1 & I2 & I3 & I4 & I5 &
+    E1 & E2 & E3 & E4 & Observações \\
+    \midrule
+    \endhead
+
+    \midrule
+    \multicolumn{11}{r}{Continua na próxima página} \\
+    \endfoot
+
+    \bottomrule
+    \endlastfoot
+
+    % Cole aqui todas as linhas dos seus trabalhos,
+    % começando pela primeira linha de dados.
+    % Mantenha os \midrule entre os trabalhos, se desejar.
+
+        Ambala, S., Selvi, M., Kiruba, S. et al. NTAM: Neural Transfer Alignment for Cross-Lingual Question Answering in Low-Resource Indian Languages. SN COMPUT. SCI. 7, 526 (2026). https://doi.org/10.1007/s42979-026-05111-4 &
+        X & X & X & & X & & & & &
+        Discute a importância de \textit{datasets} nativos em vez de traduções automáticas; aponta que a menor representação de certos idiomas no treinamento pode afetar a qualidade da inferência; considera o alinhamento uma precondição para a transferência bem-sucedida. 
+        \\
+        \midrule
+        Oliveira, Rennê \& Erven, Gustavo \& Garcia, Luís. (2026). BERTomelo: Your Portuguese Encoder Best Friend. 10.48550/arXiv.2606.28999. &
+        X & X & X & X & & & & & & 
+        Apresenta a ``maldição da multilingualidade'', afirmando a superioridade de modelos monolíngues para tarefas em idoma nativo em comparação com multilíngues, com exemplos, e contextualiza na língua portuguesa. Com modelo baseado em \textit{ModernBERT} com 1024 \textit{tokens}, o BERTomelo, apresenta que longo contexto é um objeto de estudo a ser pesquisado em trabalhos futuros.
+        \\
+        \midrule
+        Savant, S., Deshpande, U.U. \& D'Silva, J. Systematic review and comparative synthesis of cross lingual question answering systems for low resource Indic languages. Discov Artif Intell 6, 1065 (2026). https://doi.org/10.1007/s44163-026-01750-x &
+        X & X & & & X & & & & & 
+        QA Extrativo é um tipo especial de QA dentre muitos, no qual o BERT se destaca, e o mais sensível a problemas de tradução. Métricas principais: EM e \textit{token-level} F1. Idiomas menos representados no treinamento de modelos multilíngues são prejudicados. SQuAD é um excelente dataset que acelera o desenvolvimento em contraste com \textit{datasets} nativos bem menores, mas tradução automática pode comprometê-lo. O principal problema é o alinhamento de \textit{spans}.
+        \\
+        \midrule
+        Sharma, V.K., Sethi, K.H., Saran, S. et al. Automated Natural Disaster Monitoring from Online News \& Social Media Posts Using Sentiment Analysis \& GIS. Earth Syst Environ 10, 13301--13339 (2026). https://doi.org/10.1007/s41748-026-01305-1 &
+        X & & X & & X & & & & & 
+        Mostra o QA Extrativo em uma aplicação específica: inferir locais de desastres naturais. Apresenta modelo de classificação desempenhando QA bem sem precisar de \textit{fine-tuning} naquele contexto específico. \\
+        \midrule
+        Enzo S. N. Silva, Pablo B. Costa, Raphael C. Vlasman, Rosimeire P. Costa, Henrique L. P. Silva, Lucas F. A. O. Pellicer, Guilherme Rinaldo, Renato A. Almeida, Darian S. R. Rabbani, Cinthya O. Oestreich, and Vinicius F. Caridá. 2026. NorBERTo: A ModernBERT Model Trained for Portuguese with 331 Billion Tokens Corpus. In Proceedings of the 17th International Conference on Computational Processing of Portuguese (PROPOR 2026) - Vol. 1, pages 183--193, Salvador, Brazil. Association for Computational Linguistics. &
+        X & & X & X & & & & & &
+        Em comparação com LLMs, modelos BERT têm vantagens de custo, latência e não estarem expostos a alucinações, sendo tão bons ou até melhores para muitas tarefas. Sugere que modelos nativos, como BERTimbau em português, superaram multilíngues em diversas tarefas. Apresenta um modelo baseado em ModernBERT, o NorBERTo, que performa bem, mesmo não sendo pré-treinado em tanto conteúdo quando o ModernBERT original. \\
+        \midrule
+        Ramy Eskander, Shubhanshu Mishra, Sneha Mehta, Sofia Samaniego, and Aria Haghighi. 2022. Towards Improved Distantly Supervised Multilingual Named-Entity Recognition for Tweets. In Proceedings of the 2nd Workshop on Multi-lingual Representation Learning (MRL), pages 115--124, Abu Dhabi, United Arab Emirates (Hybrid). Association for Computational Linguistics. &
+        X & X & X & & & & & & &
+        Mostra de forma detalhada um \textit{benchmark} de \textit{fine-tuning} de modelos de classificação para NER \textit{(Named Entity Recognition).} Compara modelos nativos, multilíngues em famílias de idiomas, e multilíngues em idiomas de origens diversas, uma categoria se sobressaindo à outra, respectivamente. \\
+        \midrule
+        Villegas-Ch, W., Gutierrez, R., Mera-Navarrete, A. et al. Multilingual Evaluation of Semantic Robustness and Cultural Adaptability in Transformer Models for Emotion Recognition. Cogn Comput 18, 73 (2026). https://doi.org/10.1007/s12559-026-10621-7 &
+        X & X & X & & & & & & &
+        Desambigua termos: idioma \textit{low-resource} e \textit{less-represented.} Traz limitações a respeito de modelos multilígues terem limitações, notadamente no que diz respeito ao desempenho em linguagem informal ou regional, o que \textit{benchmarks} comuns não mostram, notadamente no idioma português. \\
+        \midrule
+        ., C., Kyaw, K.T., Jain, R. et al. A systematic evaluation of transformer-based architectures for fake news detection in the low-resource Burmese language. Sci Rep 16, 25667 (2026). https://doi.org/10.1038/s41598-026-56647-7 &
+        X & X & X & & & & & & &
+        Reconhece que modelos multilíngues são capazes de capturar relações linguísticas entre os idiomas. O esetudo compara modelo nativo, multilíngue, e uma arquitetura distinta. Conclui que pré-treinamento em idioma nativo é crucial para bons resultados. \\
+        \midrule
+        Le, NK., Nguyen, DH., Nguyen, TTT., Nguyen, M.P., Le, T., Nguyen, M.L. (2023). A Novel Pipeline to Enhance Question-Answering Model by Identifying Relevant Information. In: Yada, K., Takama, Y., Mineshima, K., Satoh, K. (eds) New Frontiers in Artificial Intelligence. JSAI-isAI 2021. Lecture Notes in Computer Science(), vol 13856. Springer, Cham. https://doi.org/10.1007/978-3-031-36190-6\_21 &
+        X & & X & & X & & & & &
+        Desambigua sistema de QA tradicional e moderno (similares a RAG). Introduz SQuAD 2.0, e traz como métricas de avaliação EM e \textit{F1-score.} Sugere que "muitos detalhes" no texto pode prejudicar o desempenho do modelo em QA extrativo. \\
+        \midrule
+        Wei, Y., Farizan, N.H. \& Ji, C. A psychological education model integrating artificial intelligence-based BERT in physical education. Sci Rep 16, 24556 (2026). https://doi.org/10.1038/s41598-026-55734-z &
+        X & & X & & & & & & &
+        Explica a superioridade do processamento bidirecional de modelos BERT frente a outras alternativas, e como \textit{Transformers} revolucionaram o meio de NLP com \textit{self-attention.} \\
+        \midrule
+        Edeti, L., Meshesha, M. \& Negesse, F. Small language models efficacy prototyped for Oromo word sense disambiguation. Discov Computing 29, 322 (2026). https://doi.org/10.1007/s10791-026-10155-4 &
+        X & & X & & & & & & &
+        Utilizando modelos de estado da arte, o trabalho apresenta um \textit{pipeline} de análise de sentimento que performa bem mesmo em contextos multilíngues. \\
+        \midrule
+        Tiwari, R.G., Shukla, V.K., Dutt, K. et al. Leveraging bidirectional encoder representations from transformers (BERT) for enhanced fake news detection on social media. SN Soc Sci 6, 154 (2026). https://doi.org/10.1007/s43545-026-01425-5 &
+        X & & X & & & & & & &
+        O trabalho apresenta o poder da atenção bidirecional dos modelos BERT para compreensão textual em longos contextos. \\
+        \midrule
+        Ning, M., Di, W. Research on Machine Reading Comprehension Integrating Long-Distance Entity Relations and Entity-Level Linguistic Cues. Hum-Cent Intell Syst (2026). https://doi.org/10.1007/s44230-026-00154-5 &
+        X & & & X & & & & X & &
+        Traz a ideia de \textit{Machine Reading Comprehension} como área de estudo. Utiliza heurísticas para busca de informações em grandes contextos. \\
+        \midrule
+        Deshpande, S.B., Desai, P., Goh, . et al. A comprehensive comparative analysis of transformer based large language models across natural language processing benchmarks. Discov Artif Intell 6, 1326 (2026). https://doi.org/10.1007/s44163-026-01700-7 &
+        X & & & & X & & X & & &
+        Sustenta que tarefas de classificação podem ser feitas com modelos generativos, mas modelos \textit{enconder-only} tais como BERT podem ser melhores, por ter pré-treinamento bidirecional. Utiliza SQuAD v2 como \textit{dataset} experimental de QA. Traz métricas de EM e \textit{F1-score.} Sugere que modelos maiores mostram desempenho de QA Extrativo melhor. Sobre longo contexto, o artigo menciona trabalhos nos quais é evidenciado que a atenção dos modelos BERT fica naturalmente distribuída entre palavras semanticamente importantes independentes da sua posição, enquando modelos generativos têm atenção decaída em \textit{tokens} mais distantes. \\
+        \midrule
+        Yadav, R., Yadav, D.K., Jain, A. et al. Cross-lingual sentiment analysis via multimodal transformer fusion and lightweight deep ensemble learning framework. Knowl Inf Syst 68, 151 (2026). https://doi.org/10.1007/s10115-026-02768-4 &
+        X & & X & & & X & & & &
+        É feita uma estratégia de validação na qual o modelo é treinado em vários idiomas, mas testado em um idioma deixado de fora (incluindo o português). Isso gerou métricas de queda de desempenho na transferência translígue, apesar de pequenas. \\
+        \midrule
+        Elvas, L.B., Carvalho, C. Domain-specific versus general large language models: a review and empirical benchmark in real medical texts. Sci Rep 16, 24933 (2026). https://doi.org/10.1038/s41598-026-62884-7 &
+        X & & X & & & & & X & &
+        A escassez de dados em idioma nativo para \textit{fine-tuning} é um grande problema no treinamento de modelos BERT. LLMs não demonstraram precisão de inferência de \textit{spans,} ao contrário de modelos BERT em diversas tarefas \textit{downstream.} \\
+        \midrule
+\end{xltabular}
+\endgroup
+
+\end{landscape}
+\clearpage
+
+\end{document}
