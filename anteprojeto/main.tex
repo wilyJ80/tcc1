@@ -87,9 +87,33 @@ No que tange aos recursos de dados, empregam-se conjuntos derivados do padrão S
 
 Em termos arquiteturais, a investigação confronta o comportamento de modelos multilíngues e de modelos monolíngues especializados em português (como o NorBERTo). Para lidar com a restrição histórica de comprimento de entrada dos codificadores tradicionais, técnicas como janelas deslizantes (\textit{sliding windows}) são tradicionalmente empregadas; contudo, o uso de arquiteturas recentes como o ModernBERT viabiliza o processamento de janelas de contexto estendidas de forma nativa. No caso do uso de modelos menores, o uso de janela deslizante é necessário.
 
-A apuração quantitativa do desempenho é conduzida por meio da biblioteca \textit{evaluate}, que padroniza o cálculo das métricas essenciais para QA extrativo: a correspondência exata (\textit{Exact Match} - EM), que verifica se a resposta extraída coincide letra por letra com o gabarito, e o coeficiente F1 ao nível de \textit{tokens}, que quantifica a sobreposição de termos entre a predição e a referência. Devido à restrição de acesso ao conjunto de teste oficial do SQuADv2, mantido em ambiente restrito para evitar vazamento de dados em competições, a validação final é realizada sobre um subconjunto isolado de validação extraído da base de dados disponível.
+A apuração quantitativa do desempenho é conduzida por meio da biblioteca \textit{evaluate}, que padroniza o cálculo das métricas essenciais para QA extrativo: a correspondência exata (\textit{Exact Match} - EM), que verifica se a resposta extraída coincide letra por letra com o gabarito, e o coeficiente F1 ao nível de \textit{tokens}, que quantifica a sobreposição de termos entre a predição e a referência. Devido à restrição de acesso ao conjunto de teste oficial do SQuADv2, mantido em ambiente restrito para evitar vazamento de dados em competições, a validação final é realizada sobre um subconjunto isolado de validação extraído da base de dados disponível. A avaliação deve contemplar todas as restrições até então mencionadas, além de fielmente ser capaz de embasar o procedimento comparativo de transferência translíngue e tamanho de textos de entrada.
 
 \section{Cronograma}
+
+O cronograma de execução das atividades previstas para o desenvolvimento deste trabalho abrange o período entre setembro de 2026 e junho de 2027, contemplando desde o levantamento bibliográfico inicial, o desenvolvimento e os experimentos computacionais, até a escrita e apresentação da monografia final. A distribuição detalhada das etapas está apresentada na Tabela \ref{tab:cronograma}.
+
+\begin{table}[htbp]
+\centering
+\caption{Cronograma detalhado de execução das atividades.}
+\label{tab:cronograma}
+\begin{tabularx}{\textwidth}{X c c c c c c c c c c}
+\toprule
+\textbf{Atividade / Etapa} & \textbf{Set} & \textbf{Out} & \textbf{Nov} & \textbf{Dez} & \textbf{Jan} & \textbf{Fev} & \textbf{Mar} & \textbf{Abr} & \textbf{Mai} & \textbf{Jun} \\
+& \textbf{26} & \textbf{26} & \textbf{26} & \textbf{26} & \textbf{27} & \textbf{27} & \textbf{27} & \textbf{27} & \textbf{27} & \textbf{27} \\
+\midrule
+Levantamento bibliográfico e revisão da literatura & X & X & & & & & & & & \\
+Definição de tecnologias e primeiro \textit{fine-tune} & X & & & & & & & & & \\
+Definição de modelos e datasets de comparação & & & X & X & & & & & & \\
+Treinamento e avaliação comparativa de idiomas & & & & X & X & & & & & \\
+Avaliação comparativa de textos de entrada & & & & & X & X & & & & \\
+Análise dos resultados e elaboração de hipóteses & & & & & & X & X & & & \\
+Elaboração do anteprojeto e monografia parcial & & & X & X & & & & & & \\
+Escrita da monografia final & & & & & X & X & X & X & X & \\
+Apresentação e defesa da monografia final & & & & & & & & & & X \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \bibliographystyle{plain}
 \bibliography{references}

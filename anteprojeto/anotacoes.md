@@ -46,15 +46,29 @@ Ok. Validar com orientador.
 
 ## Cronograma
 
-- mmBERT: Set 2026
+- Definição das tecnologias e frameworks: Set 2026 (feito)
 
-- Revisão: Out 2026
+- Primeiro fine-tune realizado: Set 2026 (feito)
+
+- Revisão de literatura: Out 2026 (feito)
 
 - Anteprojeto: Nov 2026
 
-- Monografia parcial: Nov 2026
+- Primeira avaliação completa de modelo: Nov 2026
 
-- Monografia final: Dez 2026
+- Definição dos modelos e datasets de comparação: Nov-Dez 2026
+
+- Monografia parcial: Nov-Dez 2026
+
+- Treinamento e avaliação comparativa de idiomas: Dez 2026-Jan 2027
+
+- Treinamento e avaliação comparativa de textos de entrada: Jan 2027-Fev 2027
+
+- Elaboração de hipóteses com base nos resultados: Fev 2027-Mar 2027
+
+- Escrita da monografia final: Jan 2027-Mai 2027
+
+- Apresentação da monografia final: Jun 2027
 
 ## Metodologia
 
