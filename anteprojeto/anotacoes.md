@@ -86,7 +86,7 @@ Ok. Validar com orientador.
 
 - Pré-treinamento vs *Fine-tuning*
 
-- LLM vs encoder: geração x classificação de texto, alucinações, peso computacional
+- LLM vs encoder: geração x classificação de texto, alucinações, peso computacional, atenção bidirecional nativa sem perda de foco em tokens distantes, menor latência, alta precisão na delimitação de índices de respostas,
 
 - Aplicacoes das tarefas *downstream* de modelos BERT
 
