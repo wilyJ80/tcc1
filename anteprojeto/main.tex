@@ -53,7 +53,7 @@ Diante desse cenário, este trabalho visa investigar como esse efeito do idioma,
 
 \section{Objetivos}
 
-Investigar experimentalmente a influência do alinhamento linguístico e do tamanho da janela de contexto no desempenho de modelos baseados em arquiteturas BERT para tarefas de \textit{Question Answering} (QA) extrativo em português, por meio da implementação de um ambiente experimental e da avaliação comparativa de diferentes modelos e configurações de inferência.
+Investigar experimentalmente a influência do alinhamento linguístico e do tamanho dos textos de entrada no desempenho de modelos baseados em arquiteturas BERT para tarefas de \textit{Question Answering} (QA) extrativo em português, por meio da implementação de um ambiente experimental e da avaliação comparativa de diferentes modelos e configurações de inferência.
 
 \subsection{Objetivos Específicos}
 
@@ -68,6 +68,24 @@ Investigar experimentalmente a influência do alinhamento linguístico e do tama
 \section{Justificativas e Contribuições}
 
 \section{Metodologia}
+
+Para alcançar os objetivos propostos e investigar o impacto do alinhamento linguístico e do tamanho do texto de entrada em tarefas de \textit{Question Answering} (QA) extrativo, este trabalho classifica-se, quanto aos objetivos e procedimentos, como uma pesquisa exploratória e descritiva de natureza aplicada, fundamentada em métodos bibliográficos e experimentais \cite{gil2002como}. A abordagem experimental permite a manipulação controlada de variáveis em ambiente computacional para a mensuração objetiva de desempenho.
+
+O desenvolvimento do estudo divide-se nas seguintes etapas metodológicas:
+
+\begin{enumerate}
+    \item \textbf{Levantamento Bibliográfico:} Condução de uma revisão da literatura para mapear o estado da arte em modelos \textit{encoder-only}, transferência translingue, arquiteturas ModernBERT e o impacto de janelas de contexto estendidas em tarefas de QA extrativo.
+    \item \textbf{Preparação e Pré-processamento dos Dados:} Obtenção e estruturação dos conjuntos de dados de QA extrativo em língua portuguesa, compreendendo a limpeza textual, a tokenização adequada e a validação do alinhamento de intervalos de resposta para assegurar a consistência dos dados de treinamento e teste.
+    \item \textbf{Configuração do Ambiente Experimental:} Estabelecimento da infraestrutura computacional e da \textit{stack} tecnológica utilizando a linguagem Python, a biblioteca Hugging Face \textit{transformers} para o carregamento e adaptação dos modelos baseados em ModernBERT, e a biblioteca \textit{evaluate} para a apuração padronizada das métricas de desempenho.
+    \item \textbf{Execução dos Experimentos de Adaptação e Inferência:} Realização do treinamento dos modelos sob diferentes configurações de alinhamento linguístico, contemplando modelos monolíngues e multilíngues, de curta e longa janela de contexto, e variações no comprimento do texto de entrada para simular cenários de longo contexto.
+    \item \textbf{Avaliação Quantitativa e Análise Comparativa:} Apuração dos resultados por meio de métricas consolidadas na literatura de QA extrativo, especificamente \textit{Exact Match} (EM) e \textit{token-level} F1, seguida de análise comparativa para confrontar o desempenho dos modelos frente às hipóteses formuladas.
+\end{enumerate}
+
+O início do desenvolvimento consiste, a partir do mapeamento do estado da arte, a seleção de modelos BERT pré-treinados para a realização dos procedimentos experimentais, assim como a busca de datasets SQuADv2 previamente traduzidos em português. Isso implica em uma elaboração de tradução do dataset caso a qualidade dos existentes não contemple o nível de qualidade necessário, dada a bibliografia existente sobre o risco de traduções de datasets comprometidas. Esses elementos consistem na matéria-prima das avaliações a serem realizadas. Por fim, na fase de preparação, espera-se definir uma separação entre dataset de treino e de validação, com o cuidado de evitar separar conjuntos de perguntas e respostas que correspondam ao mesmo texto de entrada, a fim de evitar que o modelo simplesmente memorize as respostas e isso afete os resultados.
+
+A partir dos modelos pré-treinados, será escrito o código Python correspondente à pipeline de fine-tuning para cada um, utilizando a biblioteca \textit{transformers}. Serão selecionados parâmetros de configuração como número de épocas, otimizador e taxa de aprendizado. Para modelos com reduzida janela de contexto, será aplicado o método de janela deslizante, padrão utilizado em situações nas quais os textos de entrada são longos demais para o modelo. Ao longo do treinamento, será realizado o processo de reconhecimento de padrões com base no dataset de treinamento, que resulta em atualização dos pesos do modelo final, que será capaz de realizar QA extrativo. Periodicamente (sendo o período definido nos parâmetros do treinamento, comumente o número de épocas), serão feitas avaliações, que serão usadas como base pelo algoritmo da biblioteca para selecionar a melhor versão do modelo.
+
+A validação final dos resultados fundamenta-se na análise quantitativa comparativa obtida a partir das métricas EM e F1-score no conjunto de validação e teste a partir da biblioteca `evaluate`. Esse processo permite verificar de maneira objetiva se as vantagens arquiteturais do ModernBERT e o alinhamento com o idioma português conferem ganhos de acurácia na extração de respostas em documentos extensos. Essa validação final será realizada sobre uma parte do conjunto de dados proveniente do dataset de treinamento, visto que o dataset oficial de teste final do SQuADv2 é oculto por trás de uma API proprietária, feita dessa forma para evitar trapaças em competições de treinamento da comunidade.
 
 \section{Cronograma}
 

@@ -105,3 +105,5 @@ Ok. Validar com orientador.
 - Mais imagens!
 
 - Explicar visualmente QA Extrativo
+
+- Ver artigo de Lázaro: ModernBERT para QA Extrativo
