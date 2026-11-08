@@ -1,4 +1,4 @@
-# Triagem disciplina 
+# Triagem disciplina
 
 ## Analise por titulo e abstract
 
