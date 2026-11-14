@@ -110,6 +110,14 @@ Ok. Validar com orientador.
 
 - BERT em português? como fica? qual o histórico?
 
+## Feedback professor
+
+- Incrementar em justificativa o foco em ModernBERT e motivação a partir da baixa representatividade do idioma português.
+
+- Objetivos: evite ser repetitivo, mas ta bom.
+
+- Precisa mostrar o *quanto* LLM é pior (dados, números)
+
 ## Backlog Revisao Sistematica
 
 - Como os datasets SQuADv2 em português foram feitos hoje? Traduções automáticas?
