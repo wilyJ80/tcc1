@@ -6,7 +6,7 @@
 
 - [ ] https://arxiv.org/pdf/2309.15779 (QA em idioma indiano)
 
-- [ ] https://aclanthology.org/2025.acl-long.127.pdf (ModernBERT)
+- [ ] https://aclanthology.org/2025.acl-long.127.pdf (ModernBERT) -> IMPORTANTE, tem info sobre comparacao de contexto
 
 - [ ] https://arxiv.org/html/2512.00323v1 (tamanho de contexto)
 
