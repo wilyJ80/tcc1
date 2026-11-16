@@ -129,3 +129,5 @@ Ok. Validar com orientador.
 - Explicar visualmente QA Extrativo
 
 - Ver artigo de Lázaro: ModernBERT para QA Extrativo
+
+- Nao falei sobre Laya e Ettin ainda
