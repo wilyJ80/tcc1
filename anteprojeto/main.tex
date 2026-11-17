@@ -13,12 +13,35 @@
 \usepackage{array}
 \usepackage{pdflscape}
 \usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
     citecolor=blue,
     urlcolor=blue
+}
+
+% Estilo de títulos de seção conforme o modelo da UNEB
+\titleformat{\section}{\LARGE\bfseries\itshape}{\thesection}{1em}{}
+\titleformat{\subsection}{\Large\bfseries\itshape}{\thesubsection}{1em}{}
+
+% Estilização do Sumário
+\renewcommand{\cfttoctitlefont}{\hfill\huge\bfseries\itshape}
+\renewcommand{\cftaftertoctitle}{\hfill\null}
+\tocloftpagestyle{empty}
+
+% Cabeçalho e paginação da parte textual (canto superior direito)
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyhead[R]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
 }
 
 % Define resumo environment for Portuguese abstract
@@ -30,19 +53,94 @@
   \end{abstract}%
 }
 
-\title{\textbf{Avaliação sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem ModernBERT voltada para QA Extrativo de Longo Contexto}}
-\author{
-    Victor Hugo Santos Bitencourt \\
-    Departamento de Ciências Exatas e da Terra, Campus I \\
-    Universidade do Estado da Bahia (UNEB) \\
-    Salvador, Bahia, Brasil. \\
-    \texttt{abjurandam@gmail.com}
-}
-\date{}
-
 \begin{document}
 
-\maketitle
+\pagestyle{empty}
+\hypersetup{pageanchor=false}
+
+% ==================== CAPA ====================
+\begin{titlepage}
+    \centering
+    {\large \textbf{Victor Hugo Santos Bitencourt}\par}
+    
+    \vfill
+    {\LARGE \textbf{\textit{Avaliação sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem ModernBERT voltada para QA Extrativo de Longo Contexto}}\par}
+    
+    \vfill
+    {\large Salvador--BA\par}
+    {\large Novembro de 2026\par}
+\end{titlepage}
+
+% ==================== CONTRACAPA / FOLHA DE ROSTO ====================
+\begin{titlepage}
+    \centering
+    {\large \textbf{Victor Hugo Santos Bitencourt}\par}
+    
+    \vfill
+    {\LARGE \textbf{\textit{Avaliação sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem ModernBERT voltada para QA Extrativo de Longo Contexto}}\par}
+    
+    \vspace{2cm}
+    \hfill
+    \begin{minipage}{0.65\textwidth}
+        \raggedright
+        \textbf{Áreas da Computação:}\par
+        Inteligência Artificial, Processamento de Linguagem Natural\par
+        \vspace{0.8cm}
+        \textbf{Orientador:}\par
+        \mbox{}[Nome do Orientador]
+    \end{minipage}
+    
+    \vfill
+    {\large \textsc{UNEB -- Universidade do Estado da Bahia}\par}
+    {\large \textsc{Departamento de Ciências Exatas e da Terra}\par}
+    \vspace{0.5cm}
+    {\large Salvador--BA\par}
+    {\large Novembro de 2026\par}
+\end{titlepage}
+
+% ==================== FOLHA DE APROVAÇÃO ====================
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+    {\Large \textbf{Folha de Aprovação}\par}
+\end{center}
+\vspace{1.5cm}
+
+\noindent
+Anteprojeto sob o título provisório \textit{Avaliação sobre Capacidade de Transferência Translíngue em Inferência de Modelos de Linguagem ModernBERT voltada para QA Extrativo de Longo Contexto} apresentado como exigência parcial para avaliação na disciplina Trabalho de Conclusão de Curso I do bacharelado em Sistemas de Informação da Universidade do Estado da Bahia entregue por \textit{Victor Hugo Santos Bitencourt} a Marco Antônio Costa Simões e Diego Frias, professores da disciplina, em Novembro de 2026, em Salvador, Bahia.
+
+\vfill
+\begin{center}
+    \parbox{8.5cm}{%
+        \centering
+        \rule{8.5cm}{0.4pt}\\[0.2cm]
+        Victor Hugo Santos Bitencourt\\[0.1cm]
+        Orientando
+    }
+
+    \vspace{2.5cm}
+
+    \parbox{8.5cm}{%
+        \centering
+        \rule{8.5cm}{0.4pt}\\[0.2cm]
+        \mbox{}[Nome do Orientador]
+    }
+\end{center}
+\vfill
+
+% ==================== SUMÁRIO ====================
+\clearpage
+\thispagestyle{empty}
+\tableofcontents
+
+% ==================== INÍCIO DA PARTE TEXTUAL ====================
+\clearpage
+\pagestyle{fancy}
+\hypersetup{pageanchor=true}
+\pagenumbering{arabic}
+% Na ABNT, a contagem de páginas inclui a folha de rosto (a capa não conta).
+% Folha de rosto = 1, Folha de aprovação = 2, Sumário = 3 -> Introdução começa na página 4:
+\setcounter{page}{4}
 
 \section{Introdução}
 No âmbito da Inteligência Artificial, os Grandes Modelos de Linguagem (LLMs) dominam o centro da discussão. No entanto, na pesquisa científica atual, outros tipos de modelos exibem avanços contínuos; em particular, modelos BERT \textit{(Bidirectional encoder representations from transformers)} estão sempre no centro da discussão do campo de NLP (Processamento de Linguagem Natural), sendo utilizados para tarefas de classificação de texto, como análise de sentimento e reconhecimento de entidades nomeadas. Uma dessas tarefas consiste no \textit{Question Answering} Extrativo, que se difere dos mecanismos de busca modernos (ex: RAG) por buscar informações diretamente no texto, retornando uma passagem, a partir de um \textit{prompt,} sem recorrer a contexto externo \cite{le}. Diversos trabalhos mostram numerosas aplicações de tarefas desempenhadas por modelos BERT; um trabalho mostra o QA Extrativo sendo utilizado para inferência de locais de desastres naturais em texto \cite{sharma}.
@@ -125,6 +223,8 @@ Apresentação e defesa da monografia final & & & & & & & & & & X \\
 \end{tabularx}
 \end{table}
 
+\clearpage
+\addcontentsline{toc}{section}{Referências}
 \bibliographystyle{plain}
 \bibliography{references}
 
