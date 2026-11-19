@@ -142,4 +142,4 @@ Ok. Validar com orientador.
 
 - Cuidado com o *bragging.* https://arxiv.org/html/2509.06888v1 mostra contexto mmBERT, que serve como trabalhos anteriores. A falha do meu fine-tune do NorBERTo e minha experiencia com o mmBERT pode ser util ate pra motivacao, alem dos desenvolvimentos ja feitos. Deve ser muito util eu fazer a avaliacao em cima do meu mmBERT
 
-- Anotacoes nos slides!
+- Numeracao nos slides! Ajuda a banca
