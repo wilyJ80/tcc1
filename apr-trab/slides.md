@@ -9,7 +9,7 @@ theme: "Warsaw"
 colortheme: "seahorse"
 fonttheme: "structuresmallcapsserif"
 navigation: "empty"
-lang: pt-BR
+# lang: pt-BR
 slide-level: 3
 section-titles: false
 header-includes:
@@ -88,7 +88,7 @@ header-includes:
 
 ### Decoders
 
-![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.webp)
+![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.png)
 
 <!-- O que e zero shot? Explicar -->
 
@@ -98,7 +98,7 @@ header-includes:
 
 ### Encoders
 
-![Analytics Vidhya](./static/ner2.webp)
+![Analytics Vidhya](./static/ner2.png)
 
 # Conclusão
 
@@ -120,7 +120,7 @@ header-includes:
 
 ### Alteryx
 
-![Alteryx Intelligence Suite](./static/alteryx-intelligence-suite-screenshot-2-768x387.webp)
+![Alteryx Intelligence Suite](./static/alteryx-intelligence-suite-screenshot-2-768x387.png)
 
 <!-- Falar sobre limitacao do Python Tool -->
 
