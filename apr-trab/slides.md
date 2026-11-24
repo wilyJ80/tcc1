@@ -72,9 +72,9 @@ header-includes:
 
 ### Treinamento
 
-![HuggingFace](./static/pretraining.svg)
+![HuggingFace](./static/pretraining.svg){width=80%}
 
-![HuggingFace](./static/finetuning.svg)
+![HuggingFace](./static/finetuning.svg){width=80%}
 
 <!-- Comentar sobre encoders precisarem serem treinados sob medida: dominio do texto, e BERT originais em ingles -->
 
@@ -88,7 +88,7 @@ header-includes:
 
 ### Decoders
 
-![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.png)
+![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.png){width=60%}
 
 <!-- O que e zero shot? Explicar -->
 
@@ -106,7 +106,7 @@ header-includes:
 
 ### Qlik
 
-![Qlik Community](./static/qlikautomation.png)
+![Qlik Community](./static/qlikautomation.png){width=60%}
 
 ### Qlik
 
