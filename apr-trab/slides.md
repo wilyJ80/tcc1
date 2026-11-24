@@ -126,7 +126,11 @@ header-includes:
 
 ### Alteryx
 
-| Tool | English | French | German | Japanese | Latin Spanish | Brazilian Portuguese | Italian | Simplified Chinese |
+{
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+
+| Tool | EN | FR | DE | JA | ES-LA | PT-BR | IT | ZH-CN |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 | Text Pre-processing | X | X | X | | X | X | X | |
 | Sentiment Analysis | X | | | | | | | |
@@ -137,6 +141,8 @@ header-includes:
 | Text Summary | X | X | X | | X | X | X | |
 | Zero-shot Text Classification | X | | | | | | | |
 | Text Classification | X | X | X | | X | X | X | |
+
+}
 
 ## SAS
 
