@@ -29,3 +29,7 @@
 - Aplicacoes futuras: ModernBERT
 
     - 512 vs 8192 tokens
+
+# TCC
+
+- Abordar o fato que o trabalho é focado em inferência PARA PORTUGUÊS

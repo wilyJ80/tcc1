@@ -68,11 +68,15 @@ header-includes:
 
 ![HuggingFace](./static/transformers_blocks.svg)
 
+<!-- Comentar sobre o quanto usar um decoder para uma tarefa que um encoder poderia realizar seria custoso -->
+
 ### Treinamento
 
 ![HuggingFace](./static/pretraining.svg)
 
 ![HuggingFace](./static/finetuning.svg)
+
+<!-- Comentar sobre encoders precisarem serem treinados sob medida: dominio do texto, e BERT originais em ingles -->
 
 ### Encoder-Decoders
 
@@ -85,6 +89,8 @@ header-includes:
 ### Decoders
 
 ![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.webp)
+
+<!-- O que e zero shot? Explicar -->
 
 ### Encoders
 
@@ -106,9 +112,31 @@ header-includes:
 
 ![Qlik Dork - YouTube](./static/qlikrest.png)
 
+### Qlik
+
+![Guilherme Approbato - YouTube](./static/qliksse2.png)
+
 ## Alteryx
 
 ### Alteryx
+
+![Alteryx Intelligence Suite](./static/alteryx-intelligence-suite-screenshot-2-768x387.webp)
+
+<!-- Falar sobre limitacao do Python Tool -->
+
+### Alteryx
+
+| Tool | English | French | German | Japanese | Latin Spanish | Brazilian Portuguese | Italian | Simplified Chinese |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| Text Pre-processing | X | X | X | | X | X | X | |
+| Sentiment Analysis | X | | | | | | | |
+| Word Cloud | X | X | X | | X | X | X | |
+| Topic Modeling | X | X | X | | X | X | X | |
+| Named Entity Recognition | X | X | X | | X | X | X | |
+| Part-of-Speech Tagger | X | X | X | | X | X | X | |
+| Text Summary | X | X | X | | X | X | X | |
+| Zero-shot Text Classification | X | | | | | | | |
+| Text Classification | X | X | X | | X | X | X | |
 
 ## SAS
 
@@ -131,3 +159,5 @@ https://pm.dartus.fr/posts/2025/how-llm-generate-text/
 https://community.qlik.com/t5/Official-Support-Articles/How-to-get-started-with-Hugging-Face-in-Qlik-Application/ta-p/1839399?lightbox-message-images-1839399=79066i8D3201C5D36FB1EF
 
 https://www.youtube.com/watch?v=8GpKHdOqAMY
+
+https://www.youtube.com/watch?v=4xlMbVkyAws
