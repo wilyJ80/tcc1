@@ -62,7 +62,7 @@ header-includes:
 
 # Modelos 
 
-## Modelos
+## Arquiteturas
 
 ### Arquiteturas
 
