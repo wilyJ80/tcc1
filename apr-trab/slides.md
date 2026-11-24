@@ -60,6 +60,40 @@ header-includes:
 
 ![HuggingFace](./static/transformers_chrono.svg)
 
+# Modelos 
+
+## Modelos
+
+### Arquiteturas
+
+![HuggingFace](./static/transformers_blocks.svg)
+
+### Treinamento
+
+![HuggingFace](./static/pretraining.svg)
+
+![HuggingFace](./static/finetuning.svg)
+
+### Encoder-Decoders
+
+![HuggingFace](./static/t5.svg)
+
+### Encoder-Decoders
+
+![Google](./static/translate.jpg)
+
+### Decoders
+
+![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.webp)
+
+### Encoders
+
+![HuggingFace](./static/masked_modeling.svg)
+
+### Encoders
+
+![Analytics Vidhya](./static/ner2.webp)
+
 # Conclusão
 
 ## Referências
@@ -71,3 +105,7 @@ Anexo:Cronología de la inteligencia artificial - Wikipedia, la enciclopedia lib
 How do Transformers work? - Hugging Face LLM Course. Disponível em: <https://huggingface.co/learn/llm-course/chapter1/4>. Acesso em: 21 nov.. 2026.
 
 https://huggingface.co/learn/llm-course/chapter1/4
+
+https://huggingface.co/learn/llm-course/en/chapter7/5
+
+https://pm.dartus.fr/posts/2025/how-llm-generate-text/
