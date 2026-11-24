@@ -96,6 +96,24 @@ header-includes:
 
 # Conclusão
 
+## Qlik
+
+### Qlik
+
+![Qlik Community](./static/qlikautomation.png)
+
+### Qlik
+
+![Qlik Dork - YouTube](./static/qlikrest.png)
+
+## Alteryx
+
+### Alteryx
+
+## SAS
+
+### SAS
+
 ## Referências
 
 ### Referências
@@ -109,3 +127,7 @@ https://huggingface.co/learn/llm-course/chapter1/4
 https://huggingface.co/learn/llm-course/en/chapter7/5
 
 https://pm.dartus.fr/posts/2025/how-llm-generate-text/
+
+https://community.qlik.com/t5/Official-Support-Articles/How-to-get-started-with-Hugging-Face-in-Qlik-Application/ta-p/1839399?lightbox-message-images-1839399=79066i8D3201C5D36FB1EF
+
+https://www.youtube.com/watch?v=8GpKHdOqAMY
