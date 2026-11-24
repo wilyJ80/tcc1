@@ -69,3 +69,5 @@ header-includes:
 Anexo:Cronología de la inteligencia artificial - Wikipedia, la enciclopedia libre. Disponível em: <https://es.wikipedia.org/wiki/Anexo:Cronolog%C3%ADa_de_la_inteligencia_artificial>. Acesso em: 21 nov.. 2026.
 
 How do Transformers work? - Hugging Face LLM Course. Disponível em: <https://huggingface.co/learn/llm-course/chapter1/4>. Acesso em: 21 nov.. 2026.
+
+https://huggingface.co/learn/llm-course/chapter1/4
