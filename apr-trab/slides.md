@@ -114,7 +114,7 @@ header-includes:
 
 ### Qlik
 
-![Guilherme Approbato - YouTube](./static/qliksse2.png)
+![Guilherme Approbato - YouTube](./static/qliksse2.png){width=40%}
 
 ## Alteryx
 
