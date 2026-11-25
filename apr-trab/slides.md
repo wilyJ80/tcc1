@@ -126,6 +126,7 @@ BERT:
 - Não alucina, por ser de classificação: erros são mais fáceis de detectar
 - Menor custo computacional (MBs de RAM) - pode ser utilizado em *hardware* comum
 - Comumente hospedado localmente
+- Em geral, em inglês.
 :::
 ::: {.column width="50%"}
 LLMs:
@@ -134,6 +135,7 @@ LLMs:
 - Suscetível a alucinações
 - Maior custo computacional (GBs de RAM+) - geralmente exige GPUs de última geração
 - Uso de modelos de API podem ferir normas de segurança e privacidade
+- Em geral, multilíngues.
 :::
 ::::::::::::::
 
