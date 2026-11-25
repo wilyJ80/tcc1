@@ -122,7 +122,7 @@ header-includes:
 ::: {.column width="50%"}
 BERT:
 
-- Melhor quando feito sob medida
+- Melhor quando feito sob medida: exige muitos dados rotulados
 - Não alucina, por ser de classificação: erros são mais fáceis de detectar
 - Menor custo computacional (MBs de RAM) - pode ser utilizado em *hardware* comum
 - Comumente hospedado localmente
