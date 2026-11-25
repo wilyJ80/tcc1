@@ -76,8 +76,6 @@ header-includes:
 
 <!-- Contexto: nao focaremos sobre modelos de busca semantica -->
 
-## Arquiteturas
-
 ### Treinamento
 
 ![HuggingFace](./static/pretraining.svg){width=80%}
@@ -111,6 +109,29 @@ header-includes:
 ### Encoders
 
 ![Analytics Vidhya](./static/ner2.png)
+
+## Vantagens e Desvantagens
+
+### Vantagens e Desvantagens
+
+:::::::::::::: {.columns}
+::: {.column width="50%"}
+BERT:
+
+- Melhor quando feito sob medida
+- Não alucina, por ser de classificação: erros são mais fáceis de detectar
+- Menor custo computacional (MBs de RAM) - pode ser utilizado em *hardware* comum
+- Comumente hospedado localmente
+:::
+::: {.column width="50%"}
+LLMs:
+
+- Melhor capacidade *zero-shot*
+- Suscetível a alucinações
+- Maior custo computacional (GBs de RAM+) - geralmente exige GPUs de última geração
+- Uso de modelos de API podem ferir normas de segurança e privacidade
+:::
+::::::::::::::
 
 # Conclusão
 
