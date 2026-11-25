@@ -42,11 +42,15 @@ header-includes:
 
 ### Objetivos
 
+<!-- Motivacao: trabalho de conclusao de curso, palestra sobre metodos mais leves de NER, e a busca por metodos melhores que LLM -->
+
 - Mapear as possibilidades de uso desses modelos na horus CDA no curto prazo, com as plataformas usadas atualmente pelas equipes.
 
 - Compreender o potencial de uso dessas tecnologias, que se encontram no limiar entre a IA generativa, *machine learning* e engenharia de dados, equipando os times com as informações indispensáveis para a criação de soluções ainda mais personalizadas e criativas.
 
 - Trazer esse conhecimento como diferencial para a *expertise* do quadro técnico da horus CDA, posicionando-se sempre à frente no conhecimento do estado da arte em pesquisa científica e inteligência de mercado.
+
+<!-- Contexto: mercado em IA em Salvador -->
 
 ## Histórico da IA
 
@@ -70,6 +74,8 @@ header-includes:
 
 <!-- Comentar sobre o quanto usar um decoder para uma tarefa que um encoder poderia realizar seria custoso -->
 
+<!-- Contexto: nao focaremos sobre modelos de busca semantica -->
+
 ### Treinamento
 
 ![HuggingFace](./static/pretraining.svg){width=80%}
@@ -77,6 +83,8 @@ header-includes:
 ![HuggingFace](./static/finetuning.svg){width=80%}
 
 <!-- Comentar sobre encoders precisarem serem treinados sob medida: dominio do texto, e BERT originais em ingles -->
+
+<!-- Comentar sobre familiaridade do publico sobre esses modelos -->
 
 ### Encoder-Decoders
 
