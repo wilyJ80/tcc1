@@ -76,6 +76,8 @@ header-includes:
 
 <!-- Contexto: nao focaremos sobre modelos de busca semantica -->
 
+## Arquiteturas
+
 ### Treinamento
 
 ![HuggingFace](./static/pretraining.svg){width=80%}
@@ -103,6 +105,8 @@ header-includes:
 ### Encoders
 
 ![HuggingFace](./static/masked_modeling.svg)
+
+## Tarefas de Encoders
 
 ### Encoders
 
