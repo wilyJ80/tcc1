@@ -110,6 +110,10 @@ header-includes:
 
 ![Analytics Vidhya](./static/ner2.png)
 
+### Encoders
+
+![Priyam Mazumdar - YouTube](./static/extractiveqa.jpg)
+
 ## Vantagens e Desvantagens
 
 ### Vantagens e Desvantagens
@@ -200,3 +204,5 @@ https://community.qlik.com/t5/Official-Support-Articles/How-to-get-started-with-
 https://www.youtube.com/watch?v=8GpKHdOqAMY
 
 https://www.youtube.com/watch?v=4xlMbVkyAws
+
+https://www.youtube.com/watch?v=_FVwYFICYuE
