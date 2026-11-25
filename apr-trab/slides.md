@@ -165,7 +165,15 @@ LLMs:
 
 ### Alteryx
 
-{
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+
+| Redes Neurais (spaCy) | Redes Neurais (outros) | Heurísticas | Métodos Estatísticos (scikit-learn) | Desconhecido | Transformers |
+| --- | --- | --- | --- | --- | --- |
+| NER, análise de classe gramatical, Lematização | Classificação de texto | Análise de sentimento, Resumos | Modelagem de tópicos | Nuvem de palavras | Classificação Zero-shot
+
+### Alteryx
+
 \scriptsize
 \setlength{\tabcolsep}{3.5pt}
 
@@ -180,8 +188,6 @@ LLMs:
 | Text Summary | X | X | X | | X | X | X | |
 | Zero-shot Text Classification | X | | | | | | | |
 | Text Classification | X | X | X | | X | X | X | |
-
-}
 
 ## SAS
 
