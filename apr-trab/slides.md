@@ -118,26 +118,13 @@ header-includes:
 
 ### Vantagens e Desvantagens
 
-:::::::::::::: {.columns}
-::: {.column width="50%"}
-BERT:
-
-- Melhor quando feito sob medida: exige muitos dados rotulados
-- Não alucina, por ser de classificação: erros são mais fáceis de detectar
-- Menor custo computacional (MBs de RAM) - pode ser utilizado em *hardware* comum
-- Comumente hospedado localmente
-- Em geral, em inglês.
-:::
-::: {.column width="50%"}
-LLMs:
-
-- Melhor capacidade *zero-shot*
-- Suscetível a alucinações
-- Maior custo computacional (GBs de RAM+) - geralmente exige GPUs de última geração
-- Uso de modelos de API podem ferir normas de segurança e privacidade
-- Em geral, multilíngues.
-:::
-::::::::::::::
+| BERT | LLMs |
+| --- | --- |
+| Melhor quando feito sob medida: exige muitos dados rotulados | Melhor capacidade *zero-shot* |
+| Não alucina, por ser de classificação: erros são mais fáceis de detectar | Suscetível a alucinações |
+| Menor custo computacional (MBs de RAM) - pode ser utilizado em *hardware* comum | Maior custo computacional (GBs de RAM+) - geralmente exige GPUs de última geração |
+| Comumente hospedado localmente | Uso de modelos de API podem ferir normas de segurança e privacidade |
+| Em geral, em inglês (português subrepresentado) | Em geral, multilíngues |
 
 # Conclusão
 
@@ -149,11 +136,11 @@ LLMs:
 
 ### Qlik
 
-![Qlik Dork - YouTube](./static/qlikrest.png)
+![Qlik Dork - YouTube](./static/qlikhug.png)
 
 ### Qlik
 
-![Guilherme Approbato - YouTube](./static/qliksse2.png){width=40%}
+![Qlik Dork - YouTube](./static/restqlik.png)
 
 ## Alteryx
 
@@ -193,24 +180,10 @@ LLMs:
 
 ### SAS
 
-## Referências
+![SAS Visual Text Analytics Overview Demo](./static/sasmodel.png)
 
-### Referências
+## Fim
 
-Anexo:Cronología de la inteligencia artificial - Wikipedia, la enciclopedia libre. Disponível em: <https://es.wikipedia.org/wiki/Anexo:Cronolog%C3%ADa_de_la_inteligencia_artificial>. Acesso em: 21 nov.. 2026.
+### Fim
 
-How do Transformers work? - Hugging Face LLM Course. Disponível em: <https://huggingface.co/learn/llm-course/chapter1/4>. Acesso em: 21 nov.. 2026.
-
-https://huggingface.co/learn/llm-course/chapter1/4
-
-https://huggingface.co/learn/llm-course/en/chapter7/5
-
-https://pm.dartus.fr/posts/2025/how-llm-generate-text/
-
-https://community.qlik.com/t5/Official-Support-Articles/How-to-get-started-with-Hugging-Face-in-Qlik-Application/ta-p/1839399?lightbox-message-images-1839399=79066i8D3201C5D36FB1EF
-
-https://www.youtube.com/watch?v=8GpKHdOqAMY
-
-https://www.youtube.com/watch?v=4xlMbVkyAws
-
-https://www.youtube.com/watch?v=_FVwYFICYuE
+Obrigado!
