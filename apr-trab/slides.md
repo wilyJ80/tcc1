@@ -76,12 +76,6 @@ header-includes:
 
 <!-- Contexto: nao focaremos sobre modelos de busca semantica -->
 
-### Treinamento
-
-![HuggingFace](./static/pretraining.svg){width=80%}
-
-![HuggingFace](./static/finetuning.svg){width=80%}
-
 <!-- Comentar sobre encoders precisarem serem treinados sob medida: dominio do texto, e BERT originais em ingles -->
 
 <!-- Comentar sobre familiaridade do publico sobre esses modelos -->
