@@ -48,7 +48,7 @@ header-includes:
 
 - Compreender o potencial de uso dessas tecnologias, que se encontram no limiar entre a IA generativa, *machine learning* e engenharia de dados, equipando os times com as informações indispensáveis para a criação de soluções ainda mais personalizadas e criativas.
 
-- Trazer esse conhecimento como diferencial para a *expertise* do quadro técnico da horus CDA, posicionando-se sempre à frente no conhecimento do estado da arte em pesquisa científica e inteligência de mercado.
+- Nos posicionar sempre à frente no estado da arte da tecnologia.
 
 <!-- Contexto: mercado em IA em Salvador -->
 
