@@ -92,23 +92,7 @@ header-includes:
 
 <!-- O que e zero shot? Explicar -->
 
-### Encoders
-
-![HuggingFace](./static/masked_modeling.svg)
-
 ## Tarefas de Encoders
-
-### Encoders
-
-![Analytics Vidhya](./static/ner2.png)
-
-### Encoders
-
-![Priyam Mazumdar - YouTube](./static/extractiveqa.jpg)
-
-### Encoders
-
-![Hugging Face](./static/sentiment.png)
 
 ### Encoders
 
