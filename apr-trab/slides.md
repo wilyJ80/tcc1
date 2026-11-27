@@ -94,10 +94,6 @@ header-includes:
 
 ![Google](./static/translate.jpg)
 
-### Decoders
-
-![pmdartus](./static/recursive-token-generation.DxoklRFR_Gblm5.png){width=60%}
-
 <!-- O que e zero shot? Explicar -->
 
 ### Encoders
