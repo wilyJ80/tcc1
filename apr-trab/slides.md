@@ -104,7 +104,7 @@ header-includes:
 
 ### Encoders
 
-![Wayfair Tech Blog](./static/wayfair.jpg)
+![Wayfair Tech Blog](./static/wayfair.jpg){width=70%}
 
 ### Encoders
 
