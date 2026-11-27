@@ -56,7 +56,7 @@ header-includes:
 
 ### Histórico da IA
 
-![Wikimedia](./static/history.jpg){width=90%}
+![Wikimedia](./static/nlp_three_eras.png){length=60%}
 
 ## Histórico dos Transformers
 
@@ -182,8 +182,10 @@ header-includes:
 
 ![SAS Visual Text Analytics Overview Demo](./static/sasmodel.png)
 
-## Fim
+## Links Úteis
 
-### Fim
+### Links Úteis
 
-Obrigado!
+https://aiengineeringfromscratch.com/learn/transformers-deep-dive/why-transformers
+
+https://huggingface.co/learn/llm-course/en/chapter1/1
