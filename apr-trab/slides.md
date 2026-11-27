@@ -182,6 +182,22 @@ header-includes:
 
 ![SAS Visual Text Analytics Overview Demo](./static/sasmodel.png)
 
+### SAS
+
+![SAS Software](./static/sasworkbenchmanager.png)
+
+### SAS
+
+![SAS Users - YouTube](./static/workbench_resources.png)
+
+### SAS
+
+![SAS Users - YouTube](./static/workbenchvscode.png)
+
+### SAS
+
+![SAS Software - YouTube](./static/sasmodelmanager2.png)
+
 ## Links Úteis
 
 ### Links Úteis
