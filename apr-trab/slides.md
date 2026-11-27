@@ -114,6 +114,10 @@ header-includes:
 
 ![Priyam Mazumdar - YouTube](./static/extractiveqa.jpg)
 
+### Encoders
+
+![Hugging Face](./static/sentiment.png)
+
 ## Vantagens e Desvantagens
 
 ### Vantagens e Desvantagens
