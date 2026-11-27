@@ -90,10 +90,6 @@ header-includes:
 
 ![HuggingFace](./static/t5.svg)
 
-### Encoder-Decoders
-
-![Google](./static/translate.jpg)
-
 <!-- O que e zero shot? Explicar -->
 
 ### Encoders
@@ -113,6 +109,22 @@ header-includes:
 ### Encoders
 
 ![Hugging Face](./static/sentiment.png)
+
+### Encoders
+
+![News from Google](./static/googlevisa.webp)
+
+### Encoders
+
+![Wayfair Tech Blog](./static/wayfairreview.webp)
+
+### Encoders
+
+![Wayfair Tech Blog](./static/wayfair.webp)
+
+### Encoders
+
+![Jinhyuk et al.](./static/biobert.png)
 
 ## Vantagens e Desvantagens
 
