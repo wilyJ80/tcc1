@@ -80,10 +80,6 @@ header-includes:
 
 <!-- Comentar sobre familiaridade do publico sobre esses modelos -->
 
-### Encoder-Decoders
-
-![HuggingFace](./static/t5.svg)
-
 <!-- O que e zero shot? Explicar -->
 
 ## Tarefas de Encoders
