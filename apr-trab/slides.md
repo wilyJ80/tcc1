@@ -112,15 +112,15 @@ header-includes:
 
 ### Encoders
 
-![News from Google](./static/googlevisa.webp)
+![News from Google](./static/googlevisa.jpg)
 
 ### Encoders
 
-![Wayfair Tech Blog](./static/wayfairreview.webp)
+![Wayfair Tech Blog](./static/wayfairreview.jpg)
 
 ### Encoders
 
-![Wayfair Tech Blog](./static/wayfair.webp)
+![Wayfair Tech Blog](./static/wayfair.jpg)
 
 ### Encoders
 
